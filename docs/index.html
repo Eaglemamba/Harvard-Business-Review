@@ -61,6 +61,8 @@
         .tag-llm { background: #bfdbfe; color: #1e3a8a; }
         .tag-tool { background: #fecdd3; color: #9f1239; }
         .tag-analysis { background: #ddd6fe; color: #4c1d95; }
+        .tag-framework { background: #fde68a; color: #92400e; }
+        .tag-research { background: #a7f3d0; color: #065f46; }
         .rating { font-weight: 600; color: #f59e0b; }
         .footer {
             text-align: center;
@@ -94,12 +96,31 @@
                 tags: ["Agent", "LLM", "Tool", "Analysis"],
                 rating: "4.1",
                 summary: "對話式 AI 顛覆搜尋行銷，AI Agent 成為新型機器客戶，從 SEO 到 GEO 的策略轉型。"
+            },
+            {
+                file: "2026-02-24_genai-wall-effect-experts.html",
+                title: "Gen AI 無法讓員工變專家 - AI Wall Effect 研究",
+                source: "HBR Magazine Mar-Apr 2026 / Stanford & Harvard Research",
+                date: "2026-02-24",
+                tags: ["LLM", "Analysis", "Framework"],
+                rating: "3.9",
+                summary: "Gen AI 能縮短新手學習曲線，但無法消除專家與非專家的績效差距。AI Wall Effect 限制了跨領域能力轉移。"
+            },
+            {
+                file: "2026-02-24_crypto-market-maturation.html",
+                title: "加密貨幣正在成熟嗎？- 市場效率與自律監管研究",
+                source: "Mariia Petryk / Harvard Business Review",
+                date: "2026-02-24",
+                tags: ["Analysis", "Framework", "Research"],
+                rating: "2.5",
+                summary: "研究顯示加密貨幣市場正在成熟，自律監管的 IEO 市場效率接近 IPO，ICO 與 IPO 的效率差距縮小三分之一。"
             }
         ];
 
         const tagClasses = {
             "Agent": "tag-agent", "LLM": "tag-llm", "Tool": "tag-tool",
-            "Analysis": "tag-analysis"
+            "Analysis": "tag-analysis", "Framework": "tag-framework",
+            "Research": "tag-research"
         };
 
         const list = document.getElementById('articles');
