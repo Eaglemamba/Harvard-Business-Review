@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBR Learning Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans TC', -apple-system, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3b5998 50%, #5b7fb5 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        .header h1 { font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem; }
+        .header p { opacity: 0.9; font-size: 1rem; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .article-list { list-style: none; }
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-left: 4px solid #3b82f6;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+        .article-card a {
+            text-decoration: none;
+            color: #1e3a5f;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .article-card a:hover { color: #3b82f6; }
+        .article-meta {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 0.25rem;
+        }
+        .article-tags { margin-top: 0.4rem; }
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 0.25rem;
+        }
+        .tag-agent { background: #c7d2fe; color: #3730a3; }
+        .tag-llm { background: #bfdbfe; color: #1e3a8a; }
+        .tag-tool { background: #fecdd3; color: #9f1239; }
+        .tag-analysis { background: #ddd6fe; color: #4c1d95; }
+        .rating { font-weight: 600; color: #f59e0b; }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>HBR Learning Library</h1>
+        <p>Harvard Business Review 導讀文件庫 — AI Expert Learning System v1.6</p>
+    </div>
+    <div class="container">
+        <ul class="article-list" id="articles"></ul>
+    </div>
+    <div class="footer">
+        <p>Powered by AI Expert Learning System v1.6 | Processed via Claude Code</p>
+    </div>
+
+    <script>
+        // Auto-index: scans meta tags from HTML files listed below
+        // This list is auto-updated by the batch processor
+        const articles = [
+            {
+                file: "2026-02-24_ai-upending-marketing.html",
+                title: "AI 正在兩條戰線顛覆行銷 - Puntoni Marketing Revolution",
+                source: "Stefano Puntoni / Harvard Business Review",
+                date: "2026-02-24",
+                tags: ["Agent", "LLM", "Tool", "Analysis"],
+                rating: "4.1",
+                summary: "對話式 AI 顛覆搜尋行銷，AI Agent 成為新型機器客戶，從 SEO 到 GEO 的策略轉型。"
+            }
+        ];
+
+        const tagClasses = {
+            "Agent": "tag-agent", "LLM": "tag-llm", "Tool": "tag-tool",
+            "Analysis": "tag-analysis"
+        };
+
+        const list = document.getElementById('articles');
+        articles.sort((a, b) => b.date.localeCompare(a.date));
+        articles.forEach(a => {
+            const li = document.createElement('li');
+            li.className = 'article-card';
+            li.innerHTML = `
+                <a href="${a.file}">${a.title}</a>
+                <div class="article-meta">
+                    ${a.date} · ${a.source} · <span class="rating">★ ${a.rating}/5</span>
+                </div>
+                <div class="article-meta">${a.summary}</div>
+                <div class="article-tags">
+                    ${a.tags.map(t => `<span class="tag ${tagClasses[t] || ''}">${t}</span>`).join('')}
+                </div>
+            `;
+            list.appendChild(li);
+        });
+    </script>
+</body>
+</html>
