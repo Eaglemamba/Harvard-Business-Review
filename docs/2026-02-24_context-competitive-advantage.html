@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Expert 導讀：When Every Company Can Use the Same AI Models, Context Becomes a Competitive Advantage</title>
+
+    <!-- Dashboard Index Meta -->
+    <meta name="doc-date" content="2026-02-24">
+    <meta name="doc-title" content="當所有公司都能用相同 AI 模型，情境成為競爭優勢">
+    <meta name="doc-source" content="Rohan Narayana Murty & Ravi Kumar S / Harvard Business Review">
+    <meta name="doc-tags" content="Agent,LLM,Framework,Analysis">
+    <meta name="doc-rating" content="4.3">
+    <meta name="doc-summary" content="當所有企業使用相同 AI 模型和工具，組織情境（Context）成為真正的差異化來源。作者提出 Context Engineering 四步架構，將隱性執行模式轉化為 AI 可操作的競爭優勢。">
+    <meta name="doc-file" content="2026-02-24_context-competitive-advantage.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* === v1.6 MANDATORY PAGE LAYOUT === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, #1e3a5f 0%, #3b5998 50%, #5b7fb5 100%);
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .header-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .tag-agent { background: #c7d2fe; color: #3730a3; }
+        .tag-tool { background: #fecdd3; color: #9f1239; }
+        .tag-llm { background: #bfdbfe; color: #1e3a8a; }
+        .tag-analysis { background: #ddd6fe; color: #4c1d95; }
+        .tag-framework { background: #fef3c7; color: #92400e; }
+
+        .header-meta {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* === Section Titles === */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #3b82f6;
+        }
+
+        /* === Executive Summary === */
+        .executive-summary {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .executive-summary h3 {
+            font-size: 1.1rem;
+            color: #1e3a5f;
+            margin-bottom: 0.75rem;
+        }
+
+        .executive-summary p {
+            font-size: 0.95rem;
+            color: #374151;
+            margin-bottom: 0.75rem;
+        }
+
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background: #f8fafc;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .rating-score {
+            font-weight: 700;
+            color: #1e3a5f;
+        }
+
+        .rating-stars {
+            color: #f59e0b;
+        }
+
+        .rating-high {
+            color: #10b981;
+            font-size: 0.85rem;
+        }
+
+        .rating-low {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* === Learning Objectives === */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .objective-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.25rem;
+            border-top: 4px solid #3b82f6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .objective-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .objective-item:nth-child(2) { border-top-color: #10b981; }
+        .objective-item:nth-child(3) { border-top-color: #8b5cf6; }
+
+        .objective-number {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #e2e8f0;
+            margin-bottom: 0.5rem;
+        }
+
+        .objective-item h4 {
+            font-size: 0.95rem;
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+
+        .objective-item p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* === Framework Visual === */
+        .framework-visual {
+            background: linear-gradient(135deg, #1e3a5f, #3b5998);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            color: white;
+            margin: 1.5rem 0;
+        }
+
+        .framework-title {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .framework-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .framework-step {
+            text-align: center;
+            min-width: 120px;
+            flex: 1;
+        }
+
+        .framework-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+        }
+
+        .framework-step-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .framework-step-desc {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 0.25rem;
+        }
+
+        .framework-arrow {
+            font-size: 1.5rem;
+            color: #93c5fd;
+        }
+
+        /* === Tabbed Content === */
+        .tab-container { margin: 1.5rem 0; }
+
+        .tab-nav {
+            display: flex;
+            gap: 0.25rem;
+            background: #f1f5f9;
+            padding: 0.25rem;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            background: transparent;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .tab-btn:hover { color: #334155; }
+
+        .tab-btn.active {
+            background: white;
+            color: #1e3a8a;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* === Content Grid === */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .content-left {
+            padding: 1.5rem;
+            border-right: 1px solid #e2e8f0;
+            background: white;
+        }
+
+        .content-right {
+            padding: 1.5rem;
+            background: #fafbfc;
+        }
+
+        .part-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #3b82f6;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .part-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+
+        .bilingual-block {
+            margin-bottom: 1.25rem;
+        }
+
+        .bilingual-block .zh {
+            color: #1e293b;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .bilingual-block .zh .highlight {
+            background: #fef3c7;
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+        }
+
+        .bilingual-block .en {
+            color: #64748b;
+            font-style: italic;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-box-header {
+            padding: 0.6rem 1rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box-content {
+            padding: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #374151;
+        }
+
+        .info-box-content ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .info-box-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .info-box-content code {
+            background: #f1f5f9;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.85rem;
+        }
+
+        /* === Key Takeaways === */
+        .takeaways-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hover-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 0;
+        }
+
+        .hover-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .hover-card:nth-child(2) { border-left-color: #10b981; }
+        .hover-card:nth-child(3) { border-left-color: #f59e0b; }
+        .hover-card:nth-child(4) { border-left-color: #8b5cf6; }
+
+        .hover-card h4 {
+            font-size: 0.95rem;
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+
+        .hover-card p {
+            font-size: 0.88rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* === Practice Accordion === */
+        .question-accordion {
+            background: white;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e9d5ff;
+            overflow: hidden;
+        }
+
+        .question-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .question-header::-webkit-details-marker { display: none; }
+
+        .question-number {
+            font-weight: 700;
+            color: #6d28d9;
+        }
+
+        .question-type {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6d28d9;
+            background: #e9d5ff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .question-text {
+            flex: 1;
+            font-size: 0.95rem;
+            color: #374151;
+            min-width: 200px;
+        }
+
+        .accordion-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            transition: transform 0.2s;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237c3aed'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") center/contain no-repeat;
+        }
+
+        details[open] .accordion-icon { transform: rotate(180deg); }
+
+        .question-answer {
+            padding: 1rem 1.25rem;
+            background: #faf5ff;
+            border-top: 1px solid #e9d5ff;
+        }
+
+        .question-answer p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #374151;
+            margin-bottom: 0.75rem;
+        }
+
+        .question-answer p:last-child { margin-bottom: 0; }
+
+        .question-answer ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .question-answer li {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #374151;
+            margin-bottom: 0.3rem;
+        }
+
+        /* === Bottom Line === */
+        .bottom-line {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #bae6fd;
+        }
+
+        .bottom-line h3 {
+            font-size: 1.2rem;
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+
+        .bottom-line-item {
+            margin-bottom: 1rem;
+        }
+
+        .bottom-line-item h4 {
+            font-size: 0.95rem;
+            color: #0369a1;
+            margin-bottom: 0.3rem;
+        }
+
+        .bottom-line-item p {
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.7;
+        }
+
+        /* === Footer === */
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        /* === Data Table === */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.75rem 0;
+            font-size: 0.85rem;
+        }
+
+        .data-table th {
+            background: #f1f5f9;
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1e3a5f;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .data-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: #374151;
+        }
+
+        .data-table tr:hover { background: #f8fafc; }
+
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .content-grid { grid-template-columns: 1fr; }
+            .content-left { border-right: none; border-bottom: 1px solid #e2e8f0; }
+            .objectives-grid { grid-template-columns: 1fr; }
+            .takeaways-grid { grid-template-columns: 1fr; }
+            .framework-arrow { display: none; }
+            .framework-steps { gap: 1.5rem; }
+            .header h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <div class="header">
+        <div class="header-tags">
+            <span class="tag tag-agent">AGENT</span>
+            <span class="tag tag-llm">LLM</span>
+            <span class="tag tag-framework">FRAMEWORK</span>
+            <span class="tag tag-analysis">ANALYSIS</span>
+        </div>
+        <h1>當所有公司都能用相同 AI 模型，情境成為競爭優勢</h1>
+        <div class="header-subtitle">When Every Company Can Use the Same AI Models, Context Becomes a Competitive Advantage</div>
+        <div class="header-meta">Rohan Narayana Murty & Ravi Kumar S / Harvard Business Review / 2026-02-18</div>
+    </div>
+
+    <div class="container">
+
+        <!-- ========== EXECUTIVE SUMMARY ========== -->
+        <div class="executive-summary">
+            <h3>📋 快速摘要 Executive Summary</h3>
+            <p>當所有企業都能取得相同的 AI 模型（GPT、Claude、Gemini）和工具時，真正的差異化來源不再是技術本身，而是<strong>組織情境（Organizational Context）</strong>。作者研究了 50+ 家財星 500 大企業、200+ 種工作模式後發現：CRM 等系統僅記錄結果（outcomes），卻遺漏了工作「如何」展開的隱性知識——那些藏在 email、聊天、試算表中的工作流程、判斷邏輯與協調模式。這些情境符合策略管理的 VRIN 標準（Valuable, Rare, Inimitable, Non-substitutable），是 AI 時代最被低估的競爭資產。作者提出 <strong>Context Engineering</strong> 四步架構：捕捉情境、建立 AI 運行層、治理與信任、衡量 ROI，為 CXO 提供將隱性執行力轉化為可操作競爭優勢的路線圖。</p>
+            <p>This article argues that when AI models become commoditized, the organizational context — workflows, signals, coordination patterns, judgment calls — becomes the true competitive moat. The authors propose a 4-step Context Engineering framework for CXOs.</p>
+            <div class="rating-bar">
+                <span class="rating-score"><span class="rating-stars">★★★★☆</span> 4.3/5</span>
+                <span class="rating-high">↑ 策略深度、框架實用性、CDMO 適用度</span>
+                <span class="rating-low">↓ 技術實作細節、產業案例廣度</span>
+            </div>
+        </div>
+
+        <!-- ========== LEARNING OBJECTIVES ========== -->
+        <h2 class="section-title">🎯 學習目標 Learning Objectives</h2>
+        <div class="objectives-grid">
+            <div class="objective-item">
+                <div class="objective-number">01</div>
+                <h4>理解「情境」為何成為 AI 時代的競爭優勢</h4>
+                <p>掌握 Context 的定義（不僅是資料，而是執行模式），以及為何 CRM 等系統無法捕捉真正的組織知識。理解 VRIN 框架如何適用於情境資產。</p>
+            </div>
+            <div class="objective-item">
+                <div class="objective-number">02</div>
+                <h4>認識 AI 為何讓情境更重要而非更不重要</h4>
+                <p>理解通用 AI 模型需要情境接地（contextual grounding）才能產生價值，以及為何 AI 試點專案無法規模化的根本原因是缺乏組織運作邏輯。</p>
+            </div>
+            <div class="objective-item">
+                <div class="objective-number">03</div>
+                <h4>掌握 Context Engineering 四步行動框架</h4>
+                <p>學會如何捕捉工作情境（work graph）、建立 AI 運行層、建立治理機制，並衡量情境投資的 ROI，將理論轉化為可執行的 CXO 行動計畫。</p>
+            </div>
+        </div>
+
+        <!-- ========== FRAMEWORK VISUAL ========== -->
+        <div class="framework-visual">
+            <div class="framework-title">Context Engineering 四步架構 — 從隱性知識到 AI 競爭優勢</div>
+            <div class="framework-steps">
+                <div class="framework-step">
+                    <div class="framework-icon">📡</div>
+                    <div class="framework-step-title">1. 捕捉情境</div>
+                    <div class="framework-step-desc">Instrument Work<br>建立 Work Graph</div>
+                </div>
+                <div class="framework-arrow">→</div>
+                <div class="framework-step">
+                    <div class="framework-icon">⚙️</div>
+                    <div class="framework-step-title">2. AI 運行層</div>
+                    <div class="framework-step-desc">Context Library<br>作為 AI Runtime Layer</div>
+                </div>
+                <div class="framework-arrow">→</div>
+                <div class="framework-step">
+                    <div class="framework-icon">🛡️</div>
+                    <div class="framework-step-title">3. 治理與信任</div>
+                    <div class="framework-step-desc">Governance & Trust<br>權限、隱私、品質</div>
+                </div>
+                <div class="framework-arrow">→</div>
+                <div class="framework-step">
+                    <div class="framework-icon">📊</div>
+                    <div class="framework-step-title">4. 衡量 ROI</div>
+                    <div class="framework-step-desc">Monitor Impact<br>Close the ROI Loop</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== TABBED CONTENT ========== -->
+        <h2 class="section-title">📖 內容導讀 Content Sections</h2>
+
+        <div class="tab-container">
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="switchTab(event, 'tab-context')">🏢 情境即優勢</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-ai')">🤖 AI 與情境</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-cxo')">🎯 CXO 行動指南</button>
+            </div>
+
+            <!-- ===== TAB 1: 情境即優勢 ===== -->
+            <div id="tab-context" class="tab-content active">
+
+                <!-- Part I: Two B2B Companies -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Part I</div>
+                        <div class="part-title">兩家 B2B 公司的分歧——情境如何塑造執行力</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">想像兩家規模、產品、技術堆疊幾乎完全相同的 B2B 企業。它們都使用相同的 CRM、相同的 AI 模型、相同的分析工具。但它們的<span class="highlight">客戶群截然不同</span>：一家服務<span class="highlight">受監管產業</span>（風險規避、驗證優先），另一家服務<span class="highlight">數位驅動企業</span>（速度優先、快速迭代）。</p>
+                            <p class="en">"Two identical B2B companies diverge: one serves regulated industries (risk-averse, validation-first), the other digitally-driven enterprises (speed-first)."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">表面上看起來一樣的兩家公司，在實際運作中卻發展出完全不同的<span class="highlight">工作節奏、溝通模式、決策邏輯和客戶互動方式</span>。服務受監管產業的公司學會了在提案中嵌入合規語言、在每個里程碑前安排驗證步驟、在客戶溝通中預判法規疑慮。服務數位企業的公司則學會了快速原型、敏捷交付、用數據驅動的簡報打動技術決策者。</p>
+                            <p class="en">These two companies developed entirely different work rhythms, communication patterns, decision logic, and client interaction methods — even though they started with the same tools and models.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">這種差異不存在於任何系統記錄中。<span class="highlight">CRM 記錄了結果（贏單、丟單、營收），卻沒有記錄工作「如何」展開</span>。真正的差異化知識——誰在什麼時機介入、為什麼選擇這種溝通方式、如何判斷客戶的隱性需求——藏在 email 往來、Slack 對話、會議記錄和個人試算表中。</p>
+                            <p class="en">"CRM captures outcomes but not HOW work unfolds — context lives in emails, chats, spreadsheets."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">這就是<span class="highlight">情境（Context）</span>——不是抽象的「組織文化」，而是<span class="highlight">具體的、被展示出來的執行模式</span>：工作流程、判斷邏輯、協調模式、溝通信號。它是組織在數千次真實互動中累積出來的隱性知識。</p>
+                            <p class="en">"Context = demonstrated execution: workflows, signals, coordination patterns, judgment calls."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">📚 核心概念</div>
+                            <div class="info-box-content">
+                                <p><strong>系統記錄 vs 真實情境</strong></p>
+                                <table class="data-table">
+                                    <tr><th>維度</th><th>系統記錄（CRM等）</th><th>情境（Context）</th></tr>
+                                    <tr><td>記錄內容</td><td>結果：贏單、營收、客訴</td><td>過程：如何贏單、為何丟單</td></tr>
+                                    <tr><td>存在位置</td><td>結構化資料庫</td><td>Email、Chat、試算表、腦中</td></tr>
+                                    <tr><td>可複製性</td><td>高（系統可匯出）</td><td>低（隱性且分散）</td></tr>
+                                    <tr><td>AI 價值</td><td>訓練用基礎資料</td><td>差異化競爭優勢</td></tr>
+                                    <tr><td>管理現狀</td><td>已被管理</td><td>幾乎完全被忽視</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 製藥 CDMO 實例</div>
+                            <div class="info-box-content">
+                                <p><strong>David，這個案例完全映射到你的處境：</strong></p>
+                                <ul>
+                                    <li>你的 CDMO 服務<strong>受監管產業（製藥）</strong>，正是「風險規避、驗證優先」的那一側</li>
+                                    <li>你的無菌充填（aseptic fill-finish）流程中，<strong>每一個偏差處理、環境監控判斷、CAPA 決策</strong>都是情境</li>
+                                    <li>ERP/MES 記錄了批次結果，但<strong>為什麼這批次成功</strong>的操作判斷沒有被捕捉</li>
+                                    <li>這些隱性知識正是你相對於 White Raven 等競爭者的<strong>潛在護城河</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>研究規模：</strong>作者檢視了 <strong>50+ 家財星 500 大企業</strong>中 <strong>200+ 種工作模式</strong>，發現組織情境是最被系統性低估的資產。大多數企業投資了數百萬在 CRM、ERP 等結果紀錄系統上，卻幾乎沒有投資在捕捉「工作如何展開」的情境上。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part II: VRIN Framework -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Part II</div>
+                        <div class="part-title">VRIN 框架：為何情境是策略性資產</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">在策略管理學中，資源基礎理論（Resource-Based View, RBV）認為企業的持續競爭優勢來自於擁有符合 <span class="highlight">VRIN</span> 標準的資源：<strong>Valuable（有價值）、Rare（稀缺）、Inimitable（不可模仿）、Non-substitutable（不可替代）</strong>。作者論證，組織情境完美符合這四個標準。</p>
+                            <p class="en">"Context meets VRIN criteria: Valuable, Rare, Inimitable, Non-substitutable."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>Valuable（有價值）：</strong>情境直接影響執行品質。同一個 AI 模型，在有豐富組織情境的接地下，產出的結果和僅用通用提示詞的結果有天壤之別。<span class="highlight">情境讓 AI 從「通用工具」變成「專家系統」</span>。</p>
+                            <p class="en">Context transforms AI from a "generic tool" into an "expert system" when properly grounded.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>Rare（稀缺）：</strong>每個組織的情境都是獨特的，因為它來自於<span class="highlight">特定的客戶群、產業知識、團隊互動和歷史決策</span>。兩家使用相同 AI 模型的公司，不可能有相同的情境，因為它們的經歷不同。</p>
+                            <p class="en">No two organizations can have the same context because they have different histories, client bases, and accumulated decision patterns.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>Inimitable（不可模仿）：</strong>情境不是可以購買的軟體或可以招聘的人才。它是<span class="highlight">路徑依賴的（path-dependent）</span>——來自數千次真實互動的累積，包含了隱性知識、組織默契和文化慣性。競爭者可以模仿你的技術堆疊，但無法模仿你的情境。</p>
+                            <p class="en">Context is path-dependent — accumulated through thousands of real interactions, containing tacit knowledge that competitors cannot replicate by copying your tech stack.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>Non-substitutable（不可替代）：</strong>即使投入更多資金在 AI 模型或工具上，也無法替代情境的作用。<span class="highlight">更好的模型需要更好的情境才能發揮價值</span>——二者是互補關係，不是替代關係。</p>
+                            <p class="en">Better models need better context to deliver value — they are complements, not substitutes.</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #ddd6fe;">📊 VRIN 分析矩陣</div>
+                            <div class="info-box-content">
+                                <p><strong>企業 AI 資源的 VRIN 評估</strong></p>
+                                <table class="data-table">
+                                    <tr><th>資源</th><th>V</th><th>R</th><th>I</th><th>N</th><th>競爭優勢</th></tr>
+                                    <tr><td>AI 模型（GPT/Claude）</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>暫時性</td></tr>
+                                    <tr><td>雲端基礎設施</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>暫時性</td></tr>
+                                    <tr><td>AI 人才</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>可競爭性</td></tr>
+                                    <tr><td>結構化資料</td><td>✅</td><td>✅</td><td>⚠️</td><td>❌</td><td>可競爭性</td></tr>
+                                    <tr><td><strong>組織情境</strong></td><td><strong>✅</strong></td><td><strong>✅</strong></td><td><strong>✅</strong></td><td><strong>✅</strong></td><td><strong>持續性</strong></td></tr>
+                                </table>
+                                <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #64748b;">只有組織情境完全符合 VRIN 四項標準，具備產生持續競爭優勢的條件。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #a7f3d0;">🛠️ CDMO 情境資產盤點</div>
+                            <div class="info-box-content">
+                                <p><strong>David 的 CDMO 擁有哪些 VRIN 情境？</strong></p>
+                                <ul>
+                                    <li><strong>無菌充填操作判斷</strong>：環境監控異常時的決策邏輯（何時暫停、何時繼續）</li>
+                                    <li><strong>偏差處理模式</strong>：CAPA 的發起時機、根因分析方法、與 QA 的協作流程</li>
+                                    <li><strong>客戶溝通節奏</strong>：與不同藥廠客戶的技術轉移協調模式</li>
+                                    <li><strong>法規預判能力</strong>：對 FDA/EMA 查核重點的直覺判斷</li>
+                                    <li><strong>供應鏈協調</strong>：原料藥供應商管理的隱性知識</li>
+                                </ul>
+                                <p style="margin-top: 0.5rem;"><strong>這些都是 White Raven 無法複製的。</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div class="info-box-content">
+                                <p>AI 模型就像食材供應商——每個餐廳都能買到相同品質的牛肉和蔬菜。但米其林星級餐廳的護城河不在食材，而在<strong>廚師的技法、調味的直覺、出餐的節奏、與客人互動的默契</strong>。這些就是「情境」——只能透過長期實踐累積，無法被購買或複製。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== TAB 2: AI 與情境 ===== -->
+            <div id="tab-ai" class="tab-content">
+
+                <!-- Part III: AI Makes Context More Valuable -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Part III</div>
+                        <div class="part-title">AI 讓情境更有價值，而非更不重要</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">一個常見的誤解是：AI 會讓所有公司變得一樣，因為大家都用同樣的模型。事實恰恰相反。<span class="highlight">AI 讓情境變得更有價值，而非更不重要</span>。原因在於：通用的 LLM 模型本身就是「通用」的——它們擁有廣泛的知識，但缺乏任何特定組織的深層理解。</p>
+                            <p class="en">"AI makes context MORE valuable, not less — general models need explicit contextual grounding."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">沒有情境接地（contextual grounding）的 AI 就像一個天才實習生：聰明、博學、反應快，但完全不理解你的公司如何運作、客戶有什麼特殊需求、行業有什麼潛規則。<span class="highlight">你給它越多組織情境，它的產出就越接近資深員工的判斷</span>；你什麼都不給，它就只能產出泛泛而談的通用建議。</p>
+                            <p class="en">Without contextual grounding, AI is like a brilliant intern — smart but lacking deep understanding of how your specific organization operates.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">這意味著<span class="highlight">兩家公司使用完全相同的 GPT-4 或 Claude，產出的結果可能截然不同</span>——差異不在模型，而在情境。擁有豐富、結構化、可存取情境的企業，能讓通用 AI 產出遠超競爭對手的結果。情境就是 AI 的乘數效應。</p>
+                            <p class="en">"When everyone has same AI models and tools, organizational context becomes the differentiator."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">用數學來理解：<span class="highlight">AI 產出 = 模型能力 × 情境品質</span>。當模型能力趨同（所有人都能用 GPT-5 或 Claude Opus），情境品質就成為唯一的變數。投資在模型上的回報遞減，投資在情境上的回報遞增。</p>
+                            <p class="en">AI Output = Model Capability x Context Quality. When model capability converges, context quality becomes the only variable.</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">📚 核心概念</div>
+                            <div class="info-box-content">
+                                <p><strong>AI 產出公式與情境乘數效應</strong></p>
+                                <table class="data-table">
+                                    <tr><th>情境</th><th>模型</th><th>AI 產出</th><th>效果</th></tr>
+                                    <tr><td>無情境</td><td>GPT-4</td><td>通用建議</td><td>如同搜尋引擎</td></tr>
+                                    <tr><td>基礎情境</td><td>GPT-4</td><td>產業建議</td><td>如同顧問報告</td></tr>
+                                    <tr><td>豐富情境</td><td>GPT-4</td><td>精準洞察</td><td>如同資深專家</td></tr>
+                                    <tr><td>豐富情境</td><td>Claude Opus</td><td>精準洞察</td><td>如同資深專家</td></tr>
+                                </table>
+                                <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #64748b;">注意最後兩行：不同模型 + 相同豐富情境 = 相似的高品質產出。情境是決定性變數。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>回報曲線的關鍵轉折：</strong></p>
+                                <ul>
+                                    <li><strong>模型投資回報</strong>：快速遞減——從 GPT-3.5 到 GPT-4 的跳躍很大，但 GPT-4 到 GPT-5 的邊際收益越來越小</li>
+                                    <li><strong>情境投資回報</strong>：持續遞增——越多情境被捕捉和結構化，AI 的產出品質呈非線性提升</li>
+                                    <li><strong>策略啟示</strong>：多數企業的 AI 預算過度集中在模型/工具，而非情境建設</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 CDMO 應用場景</div>
+                            <div class="info-box-content">
+                                <p><strong>同樣的 AI 模型，不同的情境品質：</strong></p>
+                                <p>兩家 CDMO 都用 Claude 來輔助偏差調查。A 公司只給模型偏差描述文字；B 公司給模型偏差描述 + 近三年同類偏差的處理紀錄 + 相關 SOP + 上次 FDA 查核的觀察重點 + 產品特性。</p>
+                                <p><strong>B 公司的 AI 產出將遠超 A 公司</strong>——不是因為模型不同，而是因為情境不同。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part IV: Why AI Pilots Fail to Scale -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Part IV</div>
+                        <div class="part-title">為什麼 AI 試點專案無法規模化</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">大量企業的 AI 試點專案陷入相同困境：概念驗證（POC）成功了，但<span class="highlight">無法從試點擴展到全組織部署</span>。作者指出，根本原因不是技術問題，也不是預算問題——而是這些 AI 系統<span class="highlight">缺乏組織的運作邏輯（operating logic）</span>。</p>
+                            <p class="en">"Why AI pilots fail to scale: lack of organization's operating logic."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">在試點階段，通常由一小群理解業務脈絡的專家手動提供情境——他們知道該問什麼問題、該給 AI 什麼背景資料、該如何解讀 AI 的產出。<span class="highlight">這些人就是「人肉情境引擎」</span>。當組織嘗試擴展時，這種模式無法規模化，因為不可能讓每個用戶都擁有相同的隱性知識。</p>
+                            <p class="en">During pilots, a small group of experts manually provides context — they are the "human context engines." This model cannot scale because not every user possesses the same tacit knowledge.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">真正的解法是<span class="highlight">將組織情境系統化</span>：不是依賴個人提供情境，而是建立一個情境基礎設施（context infrastructure），讓 AI 系統可以自動存取相關的工作流程、決策歷史、協調模式和判斷邏輯。這就是 Context Engineering 的核心目標。</p>
+                            <p class="en">The real solution is to systematize organizational context into infrastructure — making it automatically accessible to AI systems rather than depending on individuals to supply it manually.</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fecdd3;">🔍 AI 試點失敗模式分析</div>
+                            <div class="info-box-content">
+                                <p><strong>從 POC 到規模化的死亡谷</strong></p>
+                                <table class="data-table">
+                                    <tr><th>階段</th><th>情境來源</th><th>效果</th><th>可擴展性</th></tr>
+                                    <tr><td>POC</td><td>專家手動提供</td><td>優秀</td><td>極低</td></tr>
+                                    <tr><td>擴展期</td><td>一般員工自行摸索</td><td>參差不齊</td><td>低</td></tr>
+                                    <tr><td>全面部署</td><td>無系統化情境</td><td>失望/放棄</td><td>失敗</td></tr>
+                                    <tr><td><strong>理想狀態</strong></td><td><strong>情境基礎設施</strong></td><td><strong>一致且優秀</strong></td><td><strong>高</strong></td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 你的 SOP RAG 系統就是解法</div>
+                            <div class="info-box-content">
+                                <p><strong>David，你正在進行的 SOP RAG 系統 POC 正是 Context Engineering 的具體實踐：</strong></p>
+                                <ul>
+                                    <li>SOP 本身就是一種<strong>結構化的組織情境</strong></li>
+                                    <li>將 SOP 嵌入 RAG 系統 = 建立<strong>情境運行層</strong></li>
+                                    <li>下一步應考慮不只是 SOP 文字，而是<strong>SOP 背後的執行判斷</strong>（偏差處理的 why，不只是 what）</li>
+                                    <li>這正是從「情境在人腦中」到「情境在系統中」的轉變</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part V: Context in Action -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Part V</div>
+                        <div class="part-title">情境實戰：銷售總監的隱性判斷</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">作者舉了一個生動的例子來說明情境的力量。一位<span class="highlight">資深銷售總監</span>在檢視一筆複雜的 B2B 交易時，能讀出 CRM 不會記錄的微妙信號。</p>
+                            <p class="en">"Context in action example: Sales director reading subtle signals — deal phasing, pricing changes, 'budget alignment' language."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">她注意到<span class="highlight">交易的階段推進節奏突然改變</span>——從穩定推進變成停滯。她看到客戶在最近的 email 中開始使用<span class="highlight">「預算調整（budget alignment）」</span>這類語言——經驗告訴她這是客戶內部需要重新爭取預算支持的信號。她發現<span class="highlight">報價結構被要求修改</span>——不是降價，而是重新分配各階段的費用比例——這表示客戶的財務年度邊界產生了影響。</p>
+                            <p class="en">She notices deal phasing changes, "budget alignment" language appearing in emails, and pricing restructuring requests — all subtle signals that CRM would never capture.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">這些判斷不在任何手冊裡，也不在任何系統記錄裡。它來自<span class="highlight">數百筆過去交易的累積經驗</span>——哪些信號預示什麼、哪種語言變化代表什麼、哪種模式值得警覺。<strong>這就是情境</strong>。當這位總監離職時，這些知識也跟著走了。</p>
+                            <p class="en">This judgment comes from hundreds of past deals — pattern recognition that lives nowhere in any system and walks out the door when that director leaves.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">同樣的模式存在於所有職能中：<span class="highlight">採購人員判斷供應商可靠性的直覺、客服人員識別升級風險的嗅覺、財務人員預判現金流壓力的經驗</span>。每個組織都有大量這樣的隱性情境，但幾乎沒有任何系統在捕捉它。</p>
+                            <p class="en">"Applies across functions: procurement, customer service, finance — systems capture outcomes not execution."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">📚 跨職能情境地圖</div>
+                            <div class="info-box-content">
+                                <p><strong>各職能的情境資產（被忽略的隱性知識）</strong></p>
+                                <table class="data-table">
+                                    <tr><th>職能</th><th>系統記錄</th><th>遺漏的情境</th></tr>
+                                    <tr><td>銷售</td><td>訂單、營收</td><td>客戶信號判讀、談判策略</td></tr>
+                                    <tr><td>採購</td><td>PO、驗收</td><td>供應商可靠性直覺、替代方案</td></tr>
+                                    <tr><td>客服</td><td>工單、解決率</td><td>升級風險預判、話術選擇</td></tr>
+                                    <tr><td>財務</td><td>帳目、報表</td><td>現金流預判、異常模式</td></tr>
+                                    <tr><td><strong>品質/GMP</strong></td><td><strong>偏差記錄、CAPA</strong></td><td><strong>根因直覺、查核應對</strong></td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 營運主管的風險</div>
+                            <div class="info-box-content">
+                                <p><strong>情境流失 = 組織能力流失</strong></p>
+                                <ul>
+                                    <li>一位資深 QA 經理離職 → 十年的法規預判經驗消失</li>
+                                    <li>一位充填線班長退休 → 設備異常處理的直覺判斷消失</li>
+                                    <li>一位 RA 主管調動 → 與 FDA 審查官的溝通節奏消失</li>
+                                </ul>
+                                <p>如果這些情境沒有被捕捉和系統化，<strong>每一次人員變動都是一次情境損失</strong>。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #c7d2fe;">⚖️ 情境捕捉難度光譜</div>
+                            <div class="info-box-content">
+                                <p><strong>從易到難：</strong></p>
+                                <ul>
+                                    <li>✅ <strong>容易</strong>：SOP、工作指導書、政策文件（已經文字化）</li>
+                                    <li>⚠️ <strong>中等</strong>：會議決策、偏差調查過程、技術轉移協調</li>
+                                    <li>❌ <strong>困難</strong>：判斷直覺、微妙信號識別、隱性溝通模式</li>
+                                </ul>
+                                <p>Context Engineering 的目標是系統性地推進這個光譜。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== TAB 3: CXO 行動指南 ===== -->
+            <div id="tab-cxo" class="tab-content">
+
+                <!-- Part VI: Action 1 & 2 -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Part VI</div>
+                        <div class="part-title">行動一 & 二：捕捉情境與建立 AI 運行層</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>行動 1：Instrument Work to Capture Context（建立 Work Graph 捕捉工作情境）</strong></p>
+                            <p class="zh">第一步是認知到你的組織每天都在產生大量情境，但<span class="highlight">幾乎沒有被系統性捕捉</span>。所謂「Work Graph」（工作圖譜）是一個概念框架：將所有工作流程、決策節點、協調互動和判斷邏輯<span class="highlight">以結構化方式記錄下來</span>，形成一個可查詢、可分析的工作知識圖。</p>
+                            <p class="en">"Instrument work to capture context (work graph)" — The first action is to systematically record workflows, decision nodes, coordination interactions, and judgment logic into a queryable knowledge graph.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">具體做法包括：在關鍵決策點建立「<span class="highlight">情境檢查點</span>」，記錄不只是決定了什麼，還有為什麼這樣決定、考慮了哪些替代方案、哪些信號影響了判斷。將 email、聊天和會議中的關鍵討論摘要為結構化的情境記錄。建立<span class="highlight">「工作日誌」</span>機制，讓團隊在完成關鍵任務後記錄過程中的判斷和發現。</p>
+                            <p class="en">Establish "context checkpoints" at critical decision points — recording not just what was decided, but why, what alternatives were considered, and what signals influenced the judgment.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>行動 2：Make Context Library a Runtime Layer for AI（將情境庫建立為 AI 的運行層）</strong></p>
+                            <p class="zh">捕捉的情境如果只是放在文件夾裡，價值有限。關鍵是將情境庫<span class="highlight">整合為 AI 系統的運行層（runtime layer）</span>——當 AI 被使用時，它能自動存取相關的組織情境，而不需要使用者手動提供。這就是從「手動 prompt engineering」到<span class="highlight">「自動 context engineering」</span>的轉變。</p>
+                            <p class="en">"Make context library a runtime layer for AI" — Integrate the context library so that AI systems automatically access relevant organizational context at runtime, without requiring users to manually supply it.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">技術上，這可以透過 RAG（檢索增強生成）架構實現：AI 在回答問題前，先從情境庫中檢索相關的工作模式、決策歷史和判斷邏輯，然後將這些作為情境提供給模型。<span class="highlight">每位員工使用 AI 時，都像是有一位了解整個組織運作歷史的資深顧問在旁邊</span>。</p>
+                            <p class="en">Technically, this can be achieved through RAG architecture — every employee using AI gets the equivalent of a senior consultant who understands the organization's entire operational history.</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #a7f3d0;">🛠️ 行動 1 實踐指南</div>
+                            <div class="info-box-content">
+                                <p><strong>CDMO 情境捕捉的優先領域：</strong></p>
+                                <table class="data-table">
+                                    <tr><th>領域</th><th>捕捉方式</th><th>優先度</th></tr>
+                                    <tr><td>偏差調查</td><td>根因分析過程記錄（含判斷邏輯）</td><td>最高</td></tr>
+                                    <tr><td>批次檢討</td><td>批次檢討會議結構化摘要</td><td>高</td></tr>
+                                    <tr><td>技術轉移</td><td>決策點日誌 + 客戶溝通記錄</td><td>高</td></tr>
+                                    <tr><td>法規查核</td><td>查核準備和應對策略記錄</td><td>中</td></tr>
+                                    <tr><td>設備維護</td><td>異常處理判斷記錄</td><td>中</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #ddd6fe;">📊 行動 2 架構圖</div>
+                            <div class="info-box-content">
+                                <p><strong>情境運行層架構（Context Runtime Layer）：</strong></p>
+                                <ul>
+                                    <li><strong>Layer 1 — 知識庫</strong>：SOP、政策、GMP 文件（你的 SOP RAG POC）</li>
+                                    <li><strong>Layer 2 — 決策庫</strong>：偏差 CAPA 歷史、批次檢討紀錄、變更控制</li>
+                                    <li><strong>Layer 3 — 模式庫</strong>：跨批次的品質趨勢、常見問題模式、季節性變化</li>
+                                    <li><strong>Layer 4 — 判斷庫</strong>：資深人員的決策邏輯、法規預判、客戶偏好</li>
+                                </ul>
+                                <p style="margin-top: 0.5rem;">你的 SOP RAG 是 Layer 1，<strong>真正的競爭優勢在 Layer 3-4</strong>。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 立即可做</div>
+                            <div class="info-box-content">
+                                <p><strong>本週可啟動的情境捕捉實驗：</strong></p>
+                                <ul>
+                                    <li>在下一次偏差調查後，請調查者花 10 分鐘記錄「為什麼這樣判斷」</li>
+                                    <li>在下一次客戶技術會議後，記錄「客戶的隱性關切是什麼」</li>
+                                    <li>請一位資深班長在班後花 5 分鐘語音記錄當天的判斷決策</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part VII: Action 3 & 4 -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Part VII</div>
+                        <div class="part-title">行動三 & 四：治理信任與衡量 ROI</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>行動 3：Establish Governance and Trust（建立治理與信任機制）</strong></p>
+                            <p class="zh">情境的捕捉和使用涉及<span class="highlight">敏感的組織知識</span>。誰可以存取哪些情境？如何確保情境的準確性？如何處理過時或錯誤的情境？如何保護員工隱私？這些都需要明確的治理框架。</p>
+                            <p class="en">"Establish governance and trust" — Context capture and usage involves sensitive organizational knowledge that requires clear governance frameworks.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">在製藥 CDMO 的脈絡下，治理尤其重要：情境庫中可能包含<span class="highlight">與 GMP 合規直接相關的判斷邏輯</span>。如果 AI 基於過時或錯誤的情境提供建議，可能影響產品品質。因此需要建立情境的<span class="highlight">版本控制、審核機制和定期更新流程</span>——這其實與 GMP 文件管理的精神一致。</p>
+                            <p class="en">In pharma CDMO context, governance is especially critical: the context library may contain judgment logic directly related to GMP compliance, requiring version control, review mechanisms, and periodic update processes.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>行動 4：Monitor Impact and Close the ROI Loop（監控影響並關閉 ROI 循環）</strong></p>
+                            <p class="zh">情境工程需要投資——人力、時間、技術。CXO 需要能夠<span class="highlight">量化這項投資的回報</span>。作者建議建立追蹤機制：比較有情境接地和無情境接地的 AI 產出品質差異、追蹤情境使用頻率和用戶滿意度、衡量決策速度和品質的改善。</p>
+                            <p class="en">"Monitor impact and close the ROI loop" — Track the quality difference between AI outputs with and without context grounding, usage frequency, user satisfaction, and decision quality improvements.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">關鍵指標包括：<span class="highlight">AI 採用率</span>（有情境的系統 vs 無情境的系統）、<span class="highlight">決策品質</span>（偏差調查完成時間、根因準確率）、<span class="highlight">知識留存率</span>（人員離職後的能力維持程度）、<span class="highlight">新人上手速度</span>（有情境支援 vs 傳統培訓）。</p>
+                            <p class="en">Key metrics include: AI adoption rate, decision quality, knowledge retention rate, and new hire onboarding speed.</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fecdd3;">🛡️ 行動 3：CDMO 治理框架</div>
+                            <div class="info-box-content">
+                                <p><strong>製藥 CDMO 的情境治理考量：</strong></p>
+                                <table class="data-table">
+                                    <tr><th>治理維度</th><th>要求</th><th>GMP 對應</th></tr>
+                                    <tr><td>存取控制</td><td>角色基礎權限</td><td>文件分級管理</td></tr>
+                                    <tr><td>版本管理</td><td>情境變更追蹤</td><td>文件版本控制</td></tr>
+                                    <tr><td>審核機制</td><td>定期覆審情境準確性</td><td>SOP 定期覆審</td></tr>
+                                    <tr><td>數據完整性</td><td>ALCOA+ 原則</td><td>數據完整性政策</td></tr>
+                                    <tr><td>客戶資訊</td><td>保密隔離</td><td>客戶合約保密條款</td></tr>
+                                </table>
+                                <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #64748b;">你已經有 GMP 治理文化——情境治理是其自然延伸。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #a7f3d0;">📊 行動 4：ROI 衡量框架</div>
+                            <div class="info-box-content">
+                                <p><strong>情境工程投資回報指標：</strong></p>
+                                <ul>
+                                    <li><strong>效率指標</strong>：偏差調查時間（目標：縮短 30%）、批次檢討時間（目標：縮短 40%）</li>
+                                    <li><strong>品質指標</strong>：根因分析準確率、CAPA 有效性、重複偏差率</li>
+                                    <li><strong>人才指標</strong>：新人獨立作業時間（目標：從 6 個月縮短到 3 個月）</li>
+                                    <li><strong>採用指標</strong>：AI 工具日活躍率、情境庫引用率</li>
+                                    <li><strong>風險指標</strong>：關鍵人員離職後的能力維持程度</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 COO 視角的行動優先序</div>
+                            <div class="info-box-content">
+                                <p><strong>David，從營運總監到 COO 的路徑上，Context Engineering 可以成為你的策略武器：</strong></p>
+                                <ul>
+                                    <li><strong>Q1</strong>：在 SOP RAG POC 中加入「判斷情境」維度</li>
+                                    <li><strong>Q2</strong>：選擇偏差調查作為情境捕捉試點</li>
+                                    <li><strong>Q3</strong>：建立治理框架，向管理層提出 Context Engineering 策略</li>
+                                    <li><strong>Q4</strong>：用 ROI 數據說服 CEO，拿到更多資源</li>
+                                </ul>
+                                <p><strong>這就是用 AI 策略思維展示 COO 級的組織能力。</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part VIII: Complete Framework Summary -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Part VIII</div>
+                        <div class="part-title">完整框架整合：從理論到執行</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">Context Engineering 不是一個技術專案，而是<span class="highlight">組織策略的根本轉變</span>。它要求 CXO 重新思考三個根本問題：</p>
+                            <p class="en">Context Engineering is not a tech project but a fundamental shift in organizational strategy, requiring CXOs to rethink three fundamental questions.</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>問題 1：我們真正的競爭優勢是什麼？</strong><br>不是技術堆疊、不是人才庫、不是資金——而是<span class="highlight">我們在數千次真實互動中累積的獨特運作邏輯</span>。如果這些邏輯只存在於人的腦中，它就是脆弱的資產。如果它被捕捉和系統化，它就成為持續的競爭護城河。</p>
+                            <p class="en">"Our real competitive advantage is not our tech stack or talent pool — it's the unique operating logic accumulated through thousands of real interactions."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>問題 2：我們的 AI 策略有情境嗎？</strong><br>大多數 AI 策略聚焦在「用什麼模型」和「自動化什麼流程」。<span class="highlight">很少有人問：「我們如何讓 AI 理解我們的組織運作方式？」</span>這個問題的答案才是 AI 價值的乘數。</p>
+                            <p class="en">"Most AI strategies focus on 'which model' and 'what to automate.' Few ask: 'How do we make AI understand how our organization operates?'"</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>問題 3：我們在投資未來的什麼？</strong><br>模型會被超越、工具會被替代、人才會流動。<span class="highlight">唯一持續累積且不可被複製的資產，就是組織情境</span>。每一天的經營都在產生情境，問題只在於：你在捕捉它嗎？</p>
+                            <p class="en">"Models will be surpassed, tools will be replaced, talent will move. The only asset that continuously accumulates and cannot be replicated is organizational context."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #ddd6fe;">📊 Context Engineering 完整行動矩陣</div>
+                            <div class="info-box-content">
+                                <table class="data-table">
+                                    <tr><th>行動</th><th>目標</th><th>CDMO 切入點</th><th>時程</th></tr>
+                                    <tr><td>1. 捕捉情境</td><td>建立 Work Graph</td><td>偏差/CAPA 判斷記錄</td><td>立即啟動</td></tr>
+                                    <tr><td>2. AI 運行層</td><td>情境庫 → AI Runtime</td><td>SOP RAG + 決策庫</td><td>Q1-Q2</td></tr>
+                                    <tr><td>3. 治理信任</td><td>權限/品質/隱私</td><td>GMP 治理模式延伸</td><td>Q2-Q3</td></tr>
+                                    <tr><td>4. 衡量 ROI</td><td>量化情境價值</td><td>調查效率/品質指標</td><td>Q3-Q4</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">🎯 策略定位圖</div>
+                            <div class="info-box-content">
+                                <p><strong>AI 競爭優勢的三個層次：</strong></p>
+                                <ul>
+                                    <li><strong>Level 1 — 工具層</strong>（大家都有）：ChatGPT、Claude、Copilot</li>
+                                    <li><strong>Level 2 — 資料層</strong>（有些差異）：公司數據、產業資料</li>
+                                    <li><strong>Level 3 — 情境層</strong>（獨一無二）：執行模式、判斷邏輯、協調智慧</li>
+                                </ul>
+                                <p>大多數企業停留在 Level 1-2。<strong>Context Engineering 的目標是到達 Level 3</strong>——這是真正的 AI 護城河。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 與 White Raven 的競爭視角</div>
+                            <div class="info-box-content">
+                                <p><strong>White Raven 可能有更先進的 AI 工具（SA25 filling machine），但那是 Level 1。</strong></p>
+                                <p>你的反擊策略不是在工具上追趕，而是在情境上建立護城河。你的 GMP 經驗、客戶關係、偏差處理智慧——<strong>這些是 White Raven 無法購買的</strong>。</p>
+                                <p>Context Engineering = 將你的經驗優勢轉化為 AI 可操作的系統優勢。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========== KEY TAKEAWAYS ========== -->
+        <h2 class="section-title">💎 重點整理 Key Takeaways</h2>
+        <div class="takeaways-grid">
+            <div class="hover-card">
+                <h4>🏢 情境 > 模型</h4>
+                <p>當所有公司都能取得相同的 AI 模型和工具，組織情境（Context）成為唯一的差異化來源。CRM 記錄結果，但情境記錄「如何」——工作流程、判斷邏輯、協調模式、溝通信號。AI 產出 = 模型能力 x 情境品質，當模型趨同，情境就是乘數。</p>
+            </div>
+            <div class="hover-card">
+                <h4>📊 VRIN 認證的策略資產</h4>
+                <p>組織情境完美符合策略管理的 VRIN 標準（Valuable, Rare, Inimitable, Non-substitutable）。不同於 AI 模型（可購買）、人才（可招聘）、資料（可取得），情境是路徑依賴的——只能透過長期實踐累積，競爭者無法複製。</p>
+            </div>
+            <div class="hover-card">
+                <h4>🤖 AI 試點失敗的根因</h4>
+                <p>多數 AI 試點無法規模化，不是技術問題，而是缺乏組織運作邏輯。試點成功是因為專家手動提供情境（「人肉情境引擎」）。規模化需要將情境系統化為 AI 的運行層——從「手動 prompt engineering」到「自動 context engineering」。</p>
+            </div>
+            <div class="hover-card">
+                <h4>🎯 四步 Context Engineering</h4>
+                <p>CXO 行動框架：(1) 捕捉工作情境建立 Work Graph (2) 將情境庫作為 AI 運行層 (3) 建立治理與信任機制 (4) 監控影響並關閉 ROI 循環。這不是技術專案，而是組織策略的根本轉變——決定了 AI 投資回報的上限。</p>
+            </div>
+        </div>
+
+        <!-- ========== PRACTICE ========== -->
+        <h2 class="section-title">📝 練習題 Practice Questions</h2>
+
+        <details class="question-accordion">
+            <summary class="question-header">
+                <span class="question-number">Q1</span>
+                <span class="question-type">概念理解</span>
+                <span class="question-text">為什麼作者認為 AI 讓情境「更有價值」而非「更不重要」？請用 AI 產出公式和 VRIN 框架說明。</span>
+                <span class="accordion-icon"></span>
+            </summary>
+            <div class="question-answer">
+                <p>作者的核心論點可以用兩個框架來理解：</p>
+                <p><strong>AI 產出公式：AI 產出 = 模型能力 x 情境品質</strong></p>
+                <ul>
+                    <li>當 AI 模型成為商品化產品（所有公司都能用 GPT-5、Claude Opus），模型能力這個變數趨於相同</li>
+                    <li>此時情境品質成為唯一的差異化變數——情境越豐富，AI 產出越有價值</li>
+                    <li>AI 不是取代情境，而是成為情境的「放大器」——有好情境的公司獲得更大優勢</li>
+                </ul>
+                <p><strong>VRIN 框架的視角：</strong></p>
+                <ul>
+                    <li><strong>V（有價值）</strong>：AI 的存在讓情境的價值從「被動知識」變成「可操作的競爭武器」——情境接地讓通用 AI 變成專家系統</li>
+                    <li><strong>R（稀缺）</strong>：AI 工具的商品化反而凸顯了情境的稀缺性——當大家工具一樣時，差異只能來自情境</li>
+                    <li><strong>I（不可模仿）</strong>：更強大的 AI 模型強化了情境的不可模仿性——即使競爭者用同樣的模型，沒有你的情境就產不出你的結果</li>
+                    <li><strong>N（不可替代）</strong>：更好的模型不能替代情境，反而更需要情境——它們是互補而非替代關係</li>
+                </ul>
+                <p>簡言之：AI 模型的普及化是「拉平」效應（人人都有），但情境是「分化」效應（各自獨特）。AI 放大了這個分化，讓擁有豐富情境的組織獲得更大的相對優勢。</p>
+            </div>
+        </details>
+
+        <details class="question-accordion">
+            <summary class="question-header">
+                <span class="question-number">Q2</span>
+                <span class="question-type">產業應用（製藥 CDMO）</span>
+                <span class="question-text">作為製藥 CDMO 的營運主管，你會如何設計一個「情境捕捉試點」來應用 Context Engineering 的第一步？請具體描述目標領域、捕捉方法和預期成果。</span>
+                <span class="accordion-icon"></span>
+            </summary>
+            <div class="question-answer">
+                <p><strong>試點設計：偏差調查情境捕捉系統</strong></p>
+                <p><strong>為什麼選擇偏差調查：</strong></p>
+                <ul>
+                    <li>偏差調查是 GMP 運營中最依賴隱性判斷的活動之一</li>
+                    <li>現有系統（偏差管理系統/CAPA 系統）記錄結果但不記錄過程中的判斷邏輯</li>
+                    <li>資深 QA/QC 人員的根因分析直覺是最難複製的情境</li>
+                    <li>偏差調查品質直接影響 FDA/EMA 查核結果——高 ROI 潛力</li>
+                </ul>
+                <p><strong>捕捉方法：</strong></p>
+                <ul>
+                    <li><strong>Step 1 — 判斷日誌</strong>：在每次偏差調查完成後，調查者花 10 分鐘填寫結構化的「判斷記錄」：為什麼選擇這個根因方向？排除了哪些可能性？哪些信號影響了判斷？</li>
+                    <li><strong>Step 2 — 交叉比對</strong>：將判斷記錄與歷史類似偏差進行比對，建立模式庫——「環境監控異常通常有這三種根因模式」</li>
+                    <li><strong>Step 3 — 語音捕捉</strong>：讓資深人員在調查過程中用語音記錄思考過程（walking + voice capture），事後用 AI 轉錄和結構化</li>
+                    <li><strong>Step 4 — 知識圖譜</strong>：將所有記錄整理為可查詢的情境庫，按偏差類型、產品、設備、季節等維度索引</li>
+                </ul>
+                <p><strong>預期成果（6 個月後）：</strong></p>
+                <ul>
+                    <li>偏差調查平均完成時間縮短 25-35%</li>
+                    <li>根因分析首次準確率提升（減少 CAPA 修訂次數）</li>
+                    <li>新進 QA 人員可以在情境支援下獨立完成中等複雜度的偏差調查</li>
+                    <li>建立可展示給 FDA 的「知識管理」成熟度——查核時的加分項</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="question-accordion">
+            <summary class="question-header">
+                <span class="question-number">Q3</span>
+                <span class="question-type">批判思考</span>
+                <span class="question-text">Context Engineering 的治理挑戰：在製藥 CDMO 環境中，情境捕捉可能與 GMP 合規產生哪些衝突？如何平衡創新與合規？</span>
+                <span class="accordion-icon"></span>
+            </summary>
+            <div class="question-answer">
+                <p>這是一個製藥 CDMO 特有的深層挑戰，需要從多個角度思考：</p>
+                <p><strong>潛在衝突 1：數據完整性（Data Integrity）</strong></p>
+                <ul>
+                    <li>GMP 要求所有影響產品品質的決策都有可追溯的記錄（ALCOA+ 原則）</li>
+                    <li>如果 AI 基於情境庫提供建議，而這些建議影響了品質決策，情境庫本身是否需要符合 GMP 文件管理標準？</li>
+                    <li>解法：區分「參考用情境」（不需 GMP 管控）和「決策用情境」（需要版本控制和審核）</li>
+                </ul>
+                <p><strong>潛在衝突 2：驗證要求（Validation）</strong></p>
+                <ul>
+                    <li>FDA 21 CFR Part 11 要求電子記錄和電子簽名的合規性</li>
+                    <li>情境庫作為 AI 運行層，是否需要作為 GxP 系統進行驗證？</li>
+                    <li>解法：採用風險基礎方法（risk-based approach）——不是所有情境都需要 GxP 級驗證，但涉及產品品質判斷的情境需要更嚴格的管控</li>
+                </ul>
+                <p><strong>潛在衝突 3：變更管理（Change Control）</strong></p>
+                <ul>
+                    <li>情境庫是動態更新的（每天都有新情境被捕捉），但 GMP 環境下的重要變更需要變更控制流程</li>
+                    <li>解法：建立「情境分級」機制——Level 1（一般知識，自動更新）、Level 2（程序相關，需覆審）、Level 3（品質判斷，需變更控制）</li>
+                </ul>
+                <p><strong>平衡策略：</strong></p>
+                <ul>
+                    <li>將 Context Engineering 定位為「知識管理改善」而非「系統變更」——這在法規框架中更容易推進</li>
+                    <li>先從非 GxP 領域開始（如供應商評估、生產排程），建立信心後再擴展到 GxP 領域</li>
+                    <li>與 QA 部門合作而非對抗——讓他們成為情境治理的共同設計者</li>
+                    <li>參考 ISPE GAMP 5 的「思維模式轉變」——監管機構正在從「合規驅動」轉向「風險驅動」，情境工程完全契合這個方向</li>
+                </ul>
+            </div>
+        </details>
+
+        <!-- ========== BOTTOM LINE ========== -->
+        <div class="bottom-line">
+            <h3>🎯 我的行動結論 Bottom Line for Me</h3>
+
+            <div class="bottom-line-item">
+                <h4>✔ 核心洞察</h4>
+                <p>這篇文章為我提供了一個完整的策略框架來思考 AI 在 CDMO 中的角色。核心訊息是：不要追逐最新的 AI 模型（那是商品化競爭），要投資在捕捉和系統化自己的組織情境上（那是護城河建設）。我的無菌充填操作經驗、偏差處理智慧、法規應對能力——這些都是 VRIN 資產，只是從未被系統性地捕捉。Context Engineering 給了我一個框架來實現這件事。</p>
+            </div>
+
+            <div class="bottom-line-item">
+                <h4>📈 立即應用</h4>
+                <p>1. 在我的 SOP RAG POC 中加入「判斷情境」維度——不只是 SOP 文字，而是 SOP 背後的為什麼。2. 本週啟動偏差調查情境捕捉實驗——請資深 QA 在下次偏差調查後記錄判斷邏輯。3. 用 VRIN 框架重新審視我的 CDMO 的競爭優勢——哪些情境是我們獨有的？4. 將 Context Engineering 概念帶入下次管理層會議，用 White Raven 作為競爭背景來推動。</p>
+            </div>
+
+            <div class="bottom-line-item">
+                <h4>⚠ 需要補充</h4>
+                <p>文章對 Context Engineering 的技術實作細節著墨不多——Work Graph 具體如何建構？情境庫的資料架構是什麼？與現有 RAG 架構的整合方式？需要進一步研究。另外，文章未討論製藥/高度監管產業的特殊挑戰（GMP 合規、數據完整性）。建議搜尋作者 Rohan Murty 的其他著作和 Soroco（他的公司）的案例研究來補充實作細節。</p>
+            </div>
+        </div>
+
+        <!-- ========== FOOTER ========== -->
+        <div class="footer">
+            <p>📅 製作日期：2026-02-24 ｜ 來源：<a href="https://hbr.org" target="_blank">Harvard Business Review</a> - Rohan Narayana Murty & Ravi Kumar S</p>
+            <p>AI Expert Learning System v1.6 ｜ Processed via Claude Code (Opus 4.6)</p>
+            <p>建議 Chat Title：2026-02-24 [Framework] Murty & Kumar - Context as Competitive Advantage</p>
+        </div>
+
+    </div>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        function switchTab(evt, tabId) {
+            const container = evt.currentTarget.closest('.tab-container');
+            container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
