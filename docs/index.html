@@ -21,41 +21,172 @@
         }
         .header h1 { font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem; }
         .header p { opacity: 0.9; font-size: 1rem; }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
-        .article-list { list-style: none; }
+
+        /* Filter Bar — sticky */
+        .filter-bar {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .filter-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .filter-section {
+            margin-bottom: 0.6rem;
+        }
+        .filter-section:last-child {
+            margin-bottom: 0;
+        }
+        .filter-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.35rem;
+        }
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #475569;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .pill:hover {
+            border-color: #93c5fd;
+            color: #1e3a5f;
+            background: #eff6ff;
+        }
+        .pill.active {
+            border-color: #3b82f6;
+            background: #3b82f6;
+            color: white;
+        }
+        .pill-reset {
+            border-color: #e2e8f0;
+            background: #f8fafc;
+            color: #64748b;
+        }
+        .pill-reset.active {
+            border-color: #94a3b8;
+            background: #64748b;
+            color: white;
+        }
+
+        /* Tag pill colors when active */
+        .pill-tag-Agent.active  { background: #4f46e5; border-color: #4f46e5; }
+        .pill-tag-LLM.active    { background: #2563eb; border-color: #2563eb; }
+        .pill-tag-Tool.active   { background: #e11d48; border-color: #e11d48; }
+        .pill-tag-Analysis.active { background: #7c3aed; border-color: #7c3aed; }
+        .pill-tag-Framework.active { background: #d97706; border-color: #d97706; }
+        .pill-tag-Research.active  { background: #059669; border-color: #059669; }
+
+        .stats-line {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            font-weight: 500;
+            padding-top: 0.3rem;
+        }
+
+        /* Container — wider for grid */
+        .container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1.5rem 2rem; }
+
+        /* Month group */
+        .month-group {
+            margin-bottom: 1.5rem;
+        }
+        .month-header {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            padding: 1.25rem 0 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 0.75rem;
+        }
+        .month-header:first-child {
+            padding-top: 0;
+        }
+        .month-header .month-count {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #94a3b8;
+            margin-left: 0.5rem;
+        }
+
+        /* CSS Grid for cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1rem;
+        }
+
+        /* Article cards — grid-friendly */
         .article-card {
             background: white;
             border-radius: 10px;
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 1rem;
+            padding: 1rem 1.25rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            border-left: 4px solid #3b82f6;
+            border-top: 3px solid #3b82f6;
             transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
         }
         .article-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         .article-card a {
             text-decoration: none;
             color: #1e3a5f;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
         }
         .article-card a:hover { color: #3b82f6; }
         .article-meta {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #94a3b8;
-            margin-top: 0.25rem;
+            margin-top: 0.3rem;
+            line-height: 1.5;
         }
-        .article-tags { margin-top: 0.4rem; }
+        .article-summary {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.4rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.6rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #f1f5f9;
+        }
+        .article-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; }
         .tag {
             display: inline-block;
-            padding: 0.15rem 0.5rem;
+            padding: 0.1rem 0.45rem;
             border-radius: 4px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
-            margin-right: 0.25rem;
         }
         .tag-agent { background: #c7d2fe; color: #3730a3; }
         .tag-llm { background: #bfdbfe; color: #1e3a8a; }
@@ -64,6 +195,14 @@
         .tag-framework { background: #fde68a; color: #92400e; }
         .tag-research { background: #a7f3d0; color: #065f46; }
         .rating { font-weight: 600; color: #f59e0b; }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
         .footer {
             text-align: center;
             padding: 2rem;
@@ -77,15 +216,29 @@
         <h1>HBR Learning Library</h1>
         <p>Harvard Business Review 導讀文件庫 — AI Expert Learning System v1.6</p>
     </div>
-    <div class="container">
-        <ul class="article-list" id="articles"></ul>
+
+    <div class="filter-bar">
+        <div class="filter-bar-inner">
+            <div class="filter-section">
+                <div class="filter-label">Month</div>
+                <div class="pill-row" id="month-pills"></div>
+            </div>
+            <div class="filter-section">
+                <div class="filter-label">Tags</div>
+                <div class="pill-row" id="tag-pills"></div>
+            </div>
+            <div class="stats-line" id="stats-line"></div>
+        </div>
     </div>
+
+    <div class="container" id="container"></div>
+
     <div class="footer">
         <p>Powered by AI Expert Learning System v1.6 | Processed via Claude Code</p>
     </div>
 
     <script>
-        // Auto-index: scans meta tags from HTML files listed below
+        // ── Article Data ─────────────────────────────────────────────────
         // This list is auto-updated by the batch processor
         const articles = [
             {
@@ -141,23 +294,180 @@
             "Research": "tag-research"
         };
 
-        const list = document.getElementById('articles');
+        // ── Month Names ──────────────────────────────────────────────────
+        const monthNamesCN = [
+            '1 月','2 月','3 月','4 月','5 月','6 月',
+            '7 月','8 月','9 月','10 月','11 月','12 月'
+        ];
+        const monthNamesEN = [
+            'January','February','March','April','May','June',
+            'July','August','September','October','November','December'
+        ];
+        const monthNamesShort = [
+            'Jan','Feb','Mar','Apr','May','Jun',
+            'Jul','Aug','Sep','Oct','Nov','Dec'
+        ];
+
+        // ── Derive Unique Months & Tags ──────────────────────────────────
         articles.sort((a, b) => b.date.localeCompare(a.date));
-        articles.forEach(a => {
-            const li = document.createElement('li');
-            li.className = 'article-card';
-            li.innerHTML = `
-                <a href="${a.file}">${a.title}</a>
-                <div class="article-meta">
-                    ${a.date} · ${a.source} · <span class="rating">★ ${a.rating}/5</span>
-                </div>
-                <div class="article-meta">${a.summary}</div>
-                <div class="article-tags">
-                    ${a.tags.map(t => `<span class="tag ${tagClasses[t] || ''}">${t}</span>`).join('')}
-                </div>
-            `;
-            list.appendChild(li);
-        });
+
+        // monthKey = "YYYY-MM"
+        function monthKey(dateStr) {
+            return dateStr.slice(0, 7);
+        }
+
+        const allMonthKeys = [...new Set(articles.map(a => monthKey(a.date)))].sort().reverse();
+        const allTags = [...new Set(articles.flatMap(a => a.tags))].sort();
+
+        // ── State ────────────────────────────────────────────────────────
+        let activeMonth = null;   // null = all
+        let activeTags = new Set();
+
+        // ── Build Filter Pills ───────────────────────────────────────────
+        function buildPills() {
+            const monthRow = document.getElementById('month-pills');
+            const tagRow = document.getElementById('tag-pills');
+
+            // "All" pill
+            const allPill = makePill('All', 'pill-reset', () => {
+                activeMonth = null;
+                activeTags.clear();
+                render();
+            });
+            allPill.id = 'pill-all';
+            monthRow.appendChild(allPill);
+
+            // Month pills
+            allMonthKeys.forEach(mk => {
+                const [y, m] = mk.split('-');
+                const mi = parseInt(m, 10) - 1;
+                const label = `${monthNamesShort[mi]} ${y}`;
+                const pill = makePill(label, '', () => {
+                    activeMonth = (activeMonth === mk) ? null : mk;
+                    render();
+                });
+                pill.dataset.month = mk;
+                monthRow.appendChild(pill);
+            });
+
+            // Tag pills
+            allTags.forEach(tag => {
+                const pill = makePill(tag, `pill-tag-${tag}`, () => {
+                    if (activeTags.has(tag)) {
+                        activeTags.delete(tag);
+                    } else {
+                        activeTags.add(tag);
+                    }
+                    render();
+                });
+                pill.dataset.tag = tag;
+                tagRow.appendChild(pill);
+            });
+        }
+
+        function makePill(text, extraClass, onClick) {
+            const el = document.createElement('span');
+            el.className = 'pill' + (extraClass ? ' ' + extraClass : '');
+            el.textContent = text;
+            el.addEventListener('click', onClick);
+            return el;
+        }
+
+        // ── Render ───────────────────────────────────────────────────────
+        function render() {
+            updatePillStates();
+
+            // Filter articles
+            const filtered = articles.filter(a => {
+                if (activeMonth && monthKey(a.date) !== activeMonth) return false;
+                if (activeTags.size > 0 && !a.tags.some(t => activeTags.has(t))) return false;
+                return true;
+            });
+
+            // Update stats
+            document.getElementById('stats-line').textContent =
+                `Showing ${filtered.length} of ${articles.length} articles · Newest first ↗`;
+
+            // Group by month
+            const groups = new Map();
+            filtered.forEach(a => {
+                const mk = monthKey(a.date);
+                if (!groups.has(mk)) groups.set(mk, []);
+                groups.get(mk).push(a);
+            });
+
+            // Sort month keys descending
+            const sortedKeys = [...groups.keys()].sort().reverse();
+
+            // Build HTML
+            const container = document.getElementById('container');
+            container.innerHTML = '';
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="no-results">No articles match the current filters.</div>';
+                return;
+            }
+
+            sortedKeys.forEach(mk => {
+                const [y, m] = mk.split('-');
+                const mi = parseInt(m, 10) - 1;
+                const monthArticles = groups.get(mk);
+
+                // Month group wrapper
+                const group = document.createElement('div');
+                group.className = 'month-group';
+
+                // Month header
+                const header = document.createElement('div');
+                header.className = 'month-header';
+                header.innerHTML = `${y} 年 ${monthNamesCN[mi]} — ${monthNamesEN[mi]} ${y}<span class="month-count">${monthArticles.length} article${monthArticles.length > 1 ? 's' : ''}</span>`;
+                group.appendChild(header);
+
+                // Card grid
+                const grid = document.createElement('div');
+                grid.className = 'card-grid';
+
+                monthArticles.forEach(a => {
+                    const card = document.createElement('div');
+                    card.className = 'article-card';
+                    card.innerHTML = `
+                        <a href="${a.file}">${a.title}</a>
+                        <div class="article-meta">${a.date} · ${a.source}</div>
+                        <div class="article-summary">${a.summary}</div>
+                        <div class="article-footer">
+                            <div class="article-tags">
+                                ${a.tags.map(t => `<span class="tag ${tagClasses[t] || ''}">${t}</span>`).join('')}
+                            </div>
+                            <span class="rating">★ ${a.rating}</span>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                group.appendChild(grid);
+                container.appendChild(group);
+            });
+        }
+
+        function updatePillStates() {
+            // All pill
+            const allPill = document.getElementById('pill-all');
+            allPill.classList.toggle('active', !activeMonth && activeTags.size === 0);
+
+            // Month pills
+            document.querySelectorAll('[data-month]').forEach(p => {
+                p.classList.toggle('active', p.dataset.month === activeMonth);
+            });
+
+            // Tag pills
+            document.querySelectorAll('[data-tag]').forEach(p => {
+                p.classList.toggle('active', activeTags.has(p.dataset.tag));
+            });
+        }
+
+        // ── Init ─────────────────────────────────────────────────────────
+        buildPills();
+        render();
     </script>
 </body>
 </html>
