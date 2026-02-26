@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Expert 導讀：Building Trust on Your Team</title>
+
+    <!-- Dashboard Index Meta -->
+    <meta name="doc-date" content="2026-02-27">
+    <meta name="doc-title" content="團隊信任建構指南 - HBR Management Tips Collection">
+    <meta name="doc-source" content="Harvard Business Review Editorial Staff">
+    <meta name="doc-tags" content="Framework,Analysis,Tool">
+    <meta name="doc-rating" content="4.0">
+    <meta name="doc-summary" content="HBR 精選十則管理心法，從心理安全感到 AI 導入，系統性建構團隊信任。">
+    <meta name="doc-file" content="2026-02-27_building-trust-team.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* === v1.6 MANDATORY PAGE LAYOUT === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, #1e3a5f 0%, #3b5998 50%, #5b7fb5 100%);
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .header-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .tag-framework { background: #c7d2fe; color: #3730a3; }
+        .tag-analysis { background: #ddd6fe; color: #4c1d95; }
+        .tag-tool { background: #fecdd3; color: #9f1239; }
+
+        .header-meta {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* === Section Titles === */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #3b82f6;
+        }
+
+        /* === Executive Summary === */
+        .executive-summary {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .executive-summary h3 {
+            font-size: 1.1rem;
+            color: #1e3a5f;
+            margin-bottom: 0.75rem;
+        }
+
+        .executive-summary p {
+            font-size: 0.95rem;
+            color: #374151;
+            margin-bottom: 0.75rem;
+        }
+
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background: #f8fafc;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .rating-score {
+            font-weight: 700;
+            color: #1e3a5f;
+        }
+
+        .rating-stars {
+            color: #f59e0b;
+        }
+
+        .rating-high {
+            color: #10b981;
+            font-size: 0.85rem;
+        }
+
+        .rating-low {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* === Learning Objectives === */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .objective-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.25rem;
+            border-top: 4px solid #3b82f6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .objective-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .objective-item:nth-child(2) { border-top-color: #10b981; }
+        .objective-item:nth-child(3) { border-top-color: #8b5cf6; }
+
+        .objective-number {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #e2e8f0;
+            margin-bottom: 0.5rem;
+        }
+
+        .objective-item h4 {
+            font-size: 0.95rem;
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+
+        .objective-item p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* === Framework Visual === */
+        .framework-visual {
+            background: linear-gradient(135deg, #1e3a5f, #3b5998);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            color: white;
+            margin: 1.5rem 0;
+        }
+
+        .framework-title {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .framework-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .framework-step {
+            text-align: center;
+            min-width: 120px;
+            flex: 1;
+        }
+
+        .framework-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+        }
+
+        .framework-step-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .framework-step-desc {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 0.25rem;
+        }
+
+        .framework-arrow {
+            font-size: 1.5rem;
+            color: #93c5fd;
+        }
+
+        /* === Tabbed Content === */
+        .tab-container { margin: 1.5rem 0; }
+
+        .tab-nav {
+            display: flex;
+            gap: 0.25rem;
+            background: #f1f5f9;
+            padding: 0.25rem;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            background: transparent;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .tab-btn:hover { color: #334155; }
+
+        .tab-btn.active {
+            background: white;
+            color: #1e3a8a;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* === Content Grid === */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .content-left {
+            padding: 1.5rem;
+            border-right: 1px solid #e2e8f0;
+            background: white;
+        }
+
+        .content-right {
+            padding: 1.5rem;
+            background: #fafbfc;
+        }
+
+        .part-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #3b82f6;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .part-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+
+        .bilingual-block {
+            margin-bottom: 1.25rem;
+        }
+
+        .bilingual-block .zh {
+            color: #1e293b;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .bilingual-block .zh .highlight {
+            background: #fef3c7;
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+        }
+
+        .bilingual-block .en {
+            color: #64748b;
+            font-style: italic;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-box-header {
+            padding: 0.6rem 1rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box-content {
+            padding: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #374151;
+        }
+
+        .info-box-content ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .info-box-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .info-box-content code {
+            background: #f1f5f9;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.85rem;
+        }
+
+        /* === Key Takeaways === */
+        .takeaways-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hover-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 0;
+        }
+
+        .hover-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .hover-card:nth-child(2) { border-left-color: #10b981; }
+        .hover-card:nth-child(3) { border-left-color: #f59e0b; }
+        .hover-card:nth-child(4) { border-left-color: #8b5cf6; }
+
+        .hover-card h4 {
+            font-size: 0.95rem;
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+
+        .hover-card p {
+            font-size: 0.88rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* === Practice Accordion === */
+        .question-accordion {
+            background: white;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e9d5ff;
+            overflow: hidden;
+        }
+
+        .question-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .question-header::-webkit-details-marker { display: none; }
+
+        .question-number {
+            font-weight: 700;
+            color: #6d28d9;
+        }
+
+        .question-type {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6d28d9;
+            background: #e9d5ff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .question-text {
+            flex: 1;
+            font-size: 0.95rem;
+            color: #374151;
+            min-width: 200px;
+        }
+
+        .accordion-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            transition: transform 0.2s;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237c3aed'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") center/contain no-repeat;
+        }
+
+        details[open] .accordion-icon { transform: rotate(180deg); }
+
+        .question-answer {
+            padding: 1rem 1.25rem;
+            background: #faf5ff;
+            border-top: 1px solid #e9d5ff;
+        }
+
+        .question-answer p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #374151;
+            margin-bottom: 0.75rem;
+        }
+
+        .question-answer p:last-child { margin-bottom: 0; }
+
+        .question-answer ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .question-answer li {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #374151;
+            margin-bottom: 0.3rem;
+        }
+
+        /* === Bottom Line === */
+        .bottom-line {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #bae6fd;
+        }
+
+        .bottom-line h3 {
+            font-size: 1.2rem;
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+
+        .bottom-line-item {
+            margin-bottom: 1rem;
+        }
+
+        .bottom-line-item h4 {
+            font-size: 0.95rem;
+            color: #0369a1;
+            margin-bottom: 0.3rem;
+        }
+
+        .bottom-line-item p {
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.7;
+        }
+
+        /* === Data Table === */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.75rem 0;
+            font-size: 0.85rem;
+        }
+
+        .data-table th {
+            background: #f1f5f9;
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1e3a5f;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .data-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: #374151;
+        }
+
+        .data-table tr:hover { background: #f8fafc; }
+
+        /* === Footer === */
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .content-grid { grid-template-columns: 1fr; }
+            .content-left { border-right: none; border-bottom: 1px solid #e2e8f0; }
+            .objectives-grid { grid-template-columns: 1fr; }
+            .takeaways-grid { grid-template-columns: 1fr; }
+            .framework-arrow { display: none; }
+            .framework-steps { gap: 1.5rem; }
+            .header h1 { font-size: 1.5rem; }
+            .tab-nav { flex-wrap: wrap; }
+            .tab-btn { font-size: 0.8rem; padding: 0.6rem 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <div class="header">
+        <div class="header-tags">
+            <span class="tag tag-framework">FRAMEWORK</span>
+            <span class="tag tag-analysis">ANALYSIS</span>
+            <span class="tag tag-tool">TOOL</span>
+        </div>
+        <h1>團隊信任建構的管理智慧</h1>
+        <div class="header-subtitle">Our Favorite Management Tips on Building Trust on Your Team</div>
+        <div class="header-meta">Harvard Business Review Editorial Staff / HBR / 2026-02-25</div>
+    </div>
+
+    <div class="container">
+
+        <!-- ========== EXECUTIVE SUMMARY ========== -->
+        <div class="executive-summary">
+            <h3>快速摘要 Executive Summary</h3>
+            <p>這篇 HBR 精選合集彙整了十則關於<strong>團隊信任建構</strong>的管理心法，涵蓋從基礎的員工互信機制、心理安全感（Psychological Safety）的常見誤解、信任的量化衡量，到不確定時代的領導穩定術、AI 導入時的心理安全維護、高壓決策的信任溝通、團隊孤獨感的消除、價值觀驅動的領導力、工作安全焦慮的管理，以及「優秀追隨者」作為領導力基石等主題。文章引述了 Ron Friedman、Amy C. Edmondson、Ranjay Gulati 等知名學者的研究，提供了一個<strong>系統性的信任建構框架</strong>，從個人行為到組織制度，從日常互動到危機應對，全方位覆蓋領導者需要掌握的信任管理能力。</p>
+            <div class="rating-bar">
+                <span class="rating-score"><span class="rating-stars">★★★★☆</span> 4.0/5</span>
+                <span class="rating-high">↑ 實務應用、學習曲線</span>
+                <span class="rating-low">↓ 技術深度、工具生態</span>
+            </div>
+        </div>
+
+        <!-- ========== LEARNING OBJECTIVES ========== -->
+        <h2 class="section-title">學習目標 Learning Objectives</h2>
+        <div class="objectives-grid">
+            <div class="objective-item">
+                <div class="objective-number">01</div>
+                <h4>掌握信任建構的多維度框架</h4>
+                <p>理解團隊信任不只是主管與員工的關係，更包含同儕互信、心理安全感、價值觀一致性等多個層面的系統工程</p>
+            </div>
+            <div class="objective-item">
+                <div class="objective-number">02</div>
+                <h4>破除心理安全感的五大迷思</h4>
+                <p>認識 Psychological Safety 的真正意涵，區分「友善」與「坦誠」、「被聽到」與「被接受」之間的關鍵差異</p>
+            </div>
+            <div class="objective-item">
+                <div class="objective-number">03</div>
+                <h4>將信任管理應用於 AI 轉型與危機領導</h4>
+                <p>學習在導入 AI 工具時維護心理安全感，在不確定時代以清晰溝通和價值觀穩定團隊信心</p>
+            </div>
+        </div>
+
+        <!-- ========== FRAMEWORK VISUAL ========== -->
+        <div class="framework-visual">
+            <div class="framework-title">團隊信任建構四層架構 Trust Building Framework</div>
+            <div class="framework-steps">
+                <div class="framework-step">
+                    <div class="framework-icon">🤝</div>
+                    <div class="framework-step-title">基礎層</div>
+                    <div class="framework-step-desc">同儕互信、共享功勞<br>主動解決衝突</div>
+                </div>
+                <div class="framework-arrow">→</div>
+                <div class="framework-step">
+                    <div class="framework-icon">🛡️</div>
+                    <div class="framework-step-title">安全層</div>
+                    <div class="framework-step-desc">心理安全感<br>坦誠 ≠ 友善</div>
+                </div>
+                <div class="framework-arrow">→</div>
+                <div class="framework-step">
+                    <div class="framework-icon">📊</div>
+                    <div class="framework-step-title">量化層</div>
+                    <div class="framework-step-desc">衡量信任指標<br>數據驅動改善</div>
+                </div>
+                <div class="framework-arrow">→</div>
+                <div class="framework-step">
+                    <div class="framework-icon">🧭</div>
+                    <div class="framework-step-title">韌性層</div>
+                    <div class="framework-step-desc">危機中的穩定領導<br>AI 轉型信任維護</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== TABBED CONTENT ========== -->
+        <h2 class="section-title">內容導讀 Content Sections</h2>
+
+        <div class="tab-container">
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="switchTab(event, 'tab-foundation')">🤝 信任基礎</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-measure')">📊 衡量與穩定</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-ai-crisis')">🤖 AI 與危機</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-resilience')">🧭 韌性與追隨</button>
+            </div>
+
+            <!-- ===== TAB 1: 信任基礎 ===== -->
+            <div id="tab-foundation" class="tab-content active">
+
+                <!-- Tip 1: Build Trust Among Employees -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Tip 1</div>
+                        <div class="part-title">如何在員工之間建立信任</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">信任毫無疑問是高績效團隊的核心。但關於培養職場信任的討論，往往聚焦在<span class="highlight">主管與員工之間的關係</span>。然而同等重要——甚至更重要的——是建立<span class="highlight">隊友之間的信任</span>。</p>
+                            <p class="en">"Trust is at the core of high-performing teams. But conversations about cultivating trust at work often focus on the relationship between managers and employees. As important—if not more so—is establishing trust between teammates."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>不要讓協作靠運氣。</strong>在每個專案開始時，先討論團隊將如何一起工作，為日後<span class="highlight">減少誤解和更順暢的合作</span>鋪路。同事們應輪流分享自己擅長的任務、溝通偏好，以及過去不成功的合作經驗。</p>
+                            <p class="en">"Don't leave collaboration to chance. At the beginning of every project, first discuss how the team will work together, paving the way for fewer misunderstandings and smoother collaboration down the road."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>建立讓每個人都在狀態內的文化。</strong>鼓勵所有人主動且包容地分享相關資訊。<span class="highlight">更高的透明度不僅能促進信任，還能激發創造力、績效和獲利能力。</span></p>
+                            <p class="en">"Encourage everyone to proactively and inclusively share relevant information. Greater transparency doesn't just foster trust—it can also fuel creativity, performance, and profitability."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>分享功勞。</strong>打造一個隊友們會認可、承認並感謝那些在成功中扮演角色的人的環境。這樣你就能<span class="highlight">促進互相感激和互惠的習慣</span>，兩者都有助於全隊的信任。</p>
+                            <p class="en">"Build an environment in which teammates recognize, acknowledge, and thank those who played a role in their success."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>不要迴避分歧，並主動化解緊張。</strong>提醒你的團隊，分歧往往能帶來更好的決策——前提是每個人都<span class="highlight">保持尊重和謙遜</span>。如果（或當）緊張出現時，建立主動解決的規範。</p>
+                            <p class="en">"Remind your team that disagreements often lead to better decisions—so long as everyone remains respectful and humble."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">📚 核心概念</div>
+                            <div class="info-box-content">
+                                <p><strong>同儕信任四大支柱</strong></p>
+                                <table class="data-table">
+                                    <tr><th>支柱</th><th>行動</th><th>效果</th></tr>
+                                    <tr><td>協作設計</td><td>專案啟動時討論工作方式</td><td>減少誤解</td></tr>
+                                    <tr><td>資訊透明</td><td>主動分享相關資訊</td><td>促進信任 + 創造力</td></tr>
+                                    <tr><td>功勞共享</td><td>公開認可貢獻者</td><td>互惠與感激循環</td></tr>
+                                    <tr><td>健康衝突</td><td>尊重地表達不同意見</td><td>更好的決策品質</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div class="info-box-content">
+                                <p>團隊信任就像無菌充填產線的環境監控。你不能只管主管和操作員之間的關係（就像只管潔淨室和外部環境的隔離），更要確保<strong>操作員之間的默契和資訊共享</strong>（就像確保潔淨室內部各區域的氣壓和溫度都受到一致管控）。任何一個環節的信任斷裂，都像一個微生物污染點，可能影響整條產線。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>來源：</strong>Ron Friedman, "How High-Performing Teams Build Trust"</p>
+                                <p>關鍵轉變：從「主管 → 員工」的單向信任，轉向「員工 ↔ 員工」的<strong>網狀信任</strong>結構。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip 2: Psychological Safety Misconceptions -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Tip 2</div>
+                        <div class="part-title">心理安全感的五大迷思</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">心理安全感（Psychological Safety）對學習、創新和績效至關重要，但它常常被誤解。以下是會<span class="highlight">阻礙進步並侵蝕信任</span>的常見迷思——以及你應該關注的真正焦點。</p>
+                            <p class="en">"Psychological safety is essential for learning, innovation, and performance, but it's often misunderstood."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>迷思一：它代表「要友善」。</strong>禮貌不應以犧牲誠實為代價。當團隊為了保持舒適而<span class="highlight">迴避困難的真相</span>，他們就錯過了學習和改善的機會。心理安全感是關於<span class="highlight">允許坦誠</span>——不是沒有緊張。</p>
+                            <p class="en">"Politeness shouldn't come at the cost of honesty. Psychological safety is about permission for candor—not the absence of tension."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>迷思二：它代表「讓你如願」。</strong>被傾聽不代表被同意。心理安全感確保每個人的想法都受歡迎——<span class="highlight">但不是自動被接受</span>。目標是更好的集體結果，不是個人的勝利。</p>
+                            <p class="en">"Being heard doesn't mean being agreed with. The goal is better collective outcomes, not individual wins."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>迷思三：它保障工作安全。</strong>能夠自由發言是心理安全感存在的跡象，但它<span class="highlight">不能保護任何人免於裁員或組織變革</span>。它只是意味著人們可以在不害怕報復的情況下提出顧慮。</p>
+                            <p class="en">"It simply means people can raise concerns without fear of retaliation."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>迷思四：它需要和績效做取捨。</strong>你不必在卓越和開放之間二選一；<span class="highlight">高標準和心理安全感都不可或缺</span>。沒有誠實的意見，團隊會陷入團體迷思（Groupthink）而無法適應。</p>
+                            <p class="en">"High standards and psychological safety are both essential. Without honest input, teams fall into groupthink and fail to adapt."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>迷思五：它只能從上層命令。</strong>政策和領導層本身無法創造心理安全感。它必須<span class="highlight">一次互動一次互動地建構</span>。領導者定調，但每個團隊成員都扮演角色。提問、表現興趣、給予支持性回應——都是讓它成真的方式。</p>
+                            <p class="en">"It must be built interaction by interaction. Leaders set the tone, but every team member plays a role."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">📚 核心概念</div>
+                            <div class="info-box-content">
+                                <p><strong>心理安全感：迷思 vs 現實</strong></p>
+                                <table class="data-table">
+                                    <tr><th>迷思</th><th>現實</th></tr>
+                                    <tr><td>= 友善</td><td>= 允許坦誠</td></tr>
+                                    <tr><td>= 讓你如願</td><td>= 被傾聽，非自動接受</td></tr>
+                                    <tr><td>= 工作保障</td><td>= 免於報復的發言權</td></tr>
+                                    <tr><td>= 犧牲績效</td><td>= 高標準 + 開放並存</td></tr>
+                                    <tr><td>= 上層命令</td><td>= 逐次互動建構</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div class="info-box-content">
+                                <p>心理安全感就像 GMP 廠房的偏差通報文化。你希望操作員發現異常時立刻通報（坦誠），而不是因為害怕被懲罰而隱瞞（友善的假象）。通報偏差不代表你的批次一定會被放行（不保障結果），也不代表你不需要維持高品質標準（不犧牲績效）。它只是確保問題能被看見、被討論、被解決。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>來源：</strong>Amy C. Edmondson &amp; Michaela J. Kerrissey</p>
+                                <p>Edmondson 是 Psychological Safety 概念的原創學者。她的核心觀點：<strong>坦誠和高標準是同盟，不是對手。</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip 3: Followership -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Tip 10</div>
+                        <div class="part-title">成為偉大的追隨者，才能成為偉大的領導者</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">強大的領導者不僅僅由他們的魅力或指揮能力所定義——他們也因為<span class="highlight">追隨的能力</span>而出眾。以下是培養優秀追隨力（Followership）的方法。</p>
+                            <p class="en">"Strong leaders aren't only defined by their charisma or ability to command—they're also distinguished by how well they follow."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>主動傾聽。</strong>真正的傾聽意味著<span class="highlight">暫時放下自我</span>。不是等著輪到自己說話，而是真正理解對方的觀點。</p>
+                            <p class="en">"True listening means suspending your ego."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>聚焦目的，而非個人功勞。</strong>把<span class="highlight">成果放在自我之前</span>。最好的追隨者和領導者一樣，關心的是任務的成功，而不是誰得到表揚。</p>
+                            <p class="en">"Focus on purpose, not personal credit. Put outcomes ahead of ego."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>可靠地交付。</strong>執行力是領導力的關鍵組成部分，而追隨者是讓事情發生的人。<strong>邀請反駁。</strong>好的追隨者<span class="highlight">對被挑戰持開放態度</span>。<strong>保持可教練性。</strong>回饋不是威脅，而是<span class="highlight">成長的燃料</span>。</p>
+                            <p class="en">"Execution is an essential part of leadership, and followers make things happen. Feedback isn't a threat; it's fuel."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">📚 核心概念</div>
+                            <div class="info-box-content">
+                                <p><strong>優秀追隨力的五個維度</strong></p>
+                                <ul>
+                                    <li><strong>主動傾聽</strong> — 放下自我，真正理解</li>
+                                    <li><strong>目的導向</strong> — 成果優先於個人功勞</li>
+                                    <li><strong>可靠交付</strong> — 執行力是領導力的基石</li>
+                                    <li><strong>歡迎挑戰</strong> — 對反駁意見持開放態度</li>
+                                    <li><strong>保持可教練性</strong> — 視回饋為成長燃料</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div class="info-box-content">
+                                <p>追隨力就像足球場上的中場核心。他不一定是進球最多的（領導力的光環），但他接球、傳球、跑位的穩定性（追隨力）決定了整支球隊能否運作。最偉大的隊長，往往也是最好的隊友。對一個追求 COO 的營運主管來說，在 CEO 面前展現的追隨力，和在團隊面前展現的領導力同等重要。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>來源：</strong>Tomas Chamorro-Premuzic &amp; Amy C. Edmondson</p>
+                                <p>關鍵洞察：追隨力和領導力不是對立的——它們是<strong>同一枚硬幣的兩面</strong>。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== TAB 2: 衡量與穩定 ===== -->
+            <div id="tab-measure" class="tab-content">
+
+                <!-- Tip 3: Make Trust Measurable -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Tip 3</div>
+                        <div class="part-title">讓信任可以被衡量</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">你知道信任對好的領導力至關重要，但你有<span class="highlight">可靠的方法來衡量它</span>嗎？不要依賴直覺或模糊的替代指標如員工參與度分數，你需要開始像衡量其他關鍵指標（財務績效或客戶滿意度）一樣，<span class="highlight">衡量、追蹤和管理組織中的信任</span>。</p>
+                            <p class="en">"Instead of relying on gut instinct or vague proxies like engagement scores, you need to start measuring, tracking, and managing trust in your organization the same way you do other key metrics."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>選擇正確的工具。</strong>從選擇適合你情境的衡量模型開始。<strong>持續監控。</strong>信任不是靜態的。它會<span class="highlight">根據領導決策、文化動態和外部壓力而上升和下降</span>。</p>
+                            <p class="en">"Trust isn't static. It rises and falls based on leadership decisions, cultural dynamics, and external pressures."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>根據數據採取行動。</strong>衡量如果不能驅動行動就毫無意義。使用信任分數來<span class="highlight">識別感知和現實之間的差距</span>，然後訓練、教練和調整領導行為。<strong>外部標竿比較。</strong>最後，將你的信任指標與產業內其他組織做比較。</p>
+                            <p class="en">"Measurement is meaningless unless it drives action. Use trust scores to identify gaps between perception and reality."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">📚 核心概念</div>
+                            <div class="info-box-content">
+                                <p><strong>信任管理四步循環</strong></p>
+                                <table class="data-table">
+                                    <tr><th>步驟</th><th>行動</th><th>關鍵</th></tr>
+                                    <tr><td>1. 選擇工具</td><td>選適合情境的衡量模型</td><td>不依賴直覺</td></tr>
+                                    <tr><td>2. 持續監控</td><td>定期追蹤信任指標</td><td>信任是動態的</td></tr>
+                                    <tr><td>3. 數據行動</td><td>識別差距並調整</td><td>衡量要驅動改變</td></tr>
+                                    <tr><td>4. 外部標竿</td><td>與同業比較</td><td>了解相對位置</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div class="info-box-content">
+                                <p>信任衡量就像環境監控系統。你不會只憑感覺判斷潔淨室的潔淨度——你用粒子計數器、微生物取樣和壓差記錄來<strong>量化</strong>它。信任也一樣，需要從「感覺團隊還不錯」升級到「有數據、有趨勢、有行動計畫」的管理水平。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>來源：</strong>John Blakey, "If Trust Is So Important, Why Aren't We Measuring It?"</p>
+                                <p>核心論點：我們衡量幾乎所有對業務重要的事物——<strong>唯獨信任被排除在外</strong>。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip 4: Steady Your Team -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Tip 4</div>
+                        <div class="part-title">在焦慮時期穩定你的團隊</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">在不確定的時期，你的團隊不只需要你的策略，更需要你的<span class="highlight">安心和方向</span>。要將人們從恐懼帶向信心，你需要展現清晰、信念和沉著。</p>
+                            <p class="en">"In times of uncertainty, your team looks to you not just for strategy, but for reassurance and direction."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>傳達清晰的目的。</strong>分享一個比日常任務<span class="highlight">更大的存在理由</span>。將工作框架為建立在共同價值觀上的集體使命的一部分。</p>
+                            <p class="en">"Share a reason for being that feels bigger than day-to-day tasks. Frame the work as part of a collective mission built on shared values."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>體現你推崇的價值觀。</strong>用行動展示你深深致力於組織和它的人——<span class="highlight">尤其在需要犧牲的時候</span>。真實性建立信任，而信任激發勇氣。</p>
+                            <p class="en">"Show through your actions that you're deeply committed to the organization and its people—especially when it requires sacrifice. Authenticity builds trust, and trust fuels courage."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>在壓力下展現冷靜的專注。</strong>深切關心，但不要被結果<span class="highlight">吞噬</span>。承認挫折，從中學習，穩步前進。</p>
+                            <p class="en">"Care deeply, but don't get consumed by results. Own setbacks, learn from them, and move forward steadily."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #a7f3d0;">🛠️ 實務應用</div>
+                            <div class="info-box-content">
+                                <p><strong>焦慮時期的領導三原則</strong></p>
+                                <ul>
+                                    <li><strong>清晰目的</strong>：將工作連結到更大的使命，不只是 KPI</li>
+                                    <li><strong>以身作則</strong>：用犧牲行動證明承諾，而非空口承諾</li>
+                                    <li><strong>冷靜專注</strong>：承認困難但不被恐懼驅動，穩定團隊節奏</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div class="info-box-content">
+                                <p>領導者在焦慮時期的角色，就像飛機駕駛遇到亂流。乘客看的不是雷達（策略數據），而是駕駛的聲音是否沉著、安全帶燈號是否亮起（清晰的指引）。如果駕駛自己先慌了，整架飛機都會陷入恐慌。你的冷靜，就是團隊的安全帶。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>來源：</strong>Ranjay Gulati, "How to Keep Your Team's Spirits Up in Anxious Times"</p>
+                                <p>Gulati（Harvard Business School 教授）的核心觀點：<strong>真實性 → 信任 → 勇氣</strong>，這是一條不可跳過的因果鏈。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip 9: Job Security Stress -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Tip 9</div>
+                        <div class="part-title">當團隊為工作安全感焦慮時</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">工作不安全感往往導致行為和績效的真實轉變：人們<span class="highlight">沉默、減少冒險、脫離投入</span>。作為領導者，你不一定總能消除恐懼，但你可以透過展現清晰和關懷來降低其影響。</p>
+                            <p class="en">"Job insecurity often leads to real shifts in behavior and performance: People go quiet, take fewer risks, and disengage."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>承認恐懼。</strong>從承認你自己的情緒開始，讓自己先<span class="highlight">穩住</span>。<strong>縮小不確定性。</strong>焦慮在資訊缺乏時茁壯。盡可能分享你知道的，即使是不完整的資訊。</p>
+                            <p class="en">"Start by acknowledging your own emotions to ground yourself. Anxiety thrives in the absence of information."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>一起創造下一步。</strong>將團隊的注意力導向他們<span class="highlight">能影響的事物</span>。<strong>成為冷靜的來源。</strong>放慢你的節奏，清晰地說話，管理自己的壓力。<strong>強化連結。</strong>在會議開始時進行快速的個人簽到或分享小勝利。</p>
+                            <p class="en">"Direct your team's attention toward what they can influence. Slow your pace, speak clearly, and manage your own stress."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #a7f3d0;">🛠️ 實務應用</div>
+                            <div class="info-box-content">
+                                <p><strong>工作安全焦慮的五步管理法</strong></p>
+                                <ul>
+                                    <li><strong>Step 1 承認恐懼</strong> — 先處理自己的情緒</li>
+                                    <li><strong>Step 2 縮小不確定</strong> — 分享你知道的一切</li>
+                                    <li><strong>Step 3 共創下一步</strong> — 聚焦可控範圍</li>
+                                    <li><strong>Step 4 保持冷靜</strong> — 放慢節奏、清晰溝通</li>
+                                    <li><strong>Step 5 強化連結</strong> — 個人簽到、分享小勝利</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div class="info-box-content">
+                                <p>面對裁員恐懼的團隊，就像面對 FDA 突擊稽核的生產線。你無法保證結果（工作安全），但你可以確保流程正確、團隊對齊、每個人都知道下一步該做什麼。最糟糕的是資訊真空——人們會自己編故事，而那些故事通常比現實更可怕。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>來源：</strong>Dina Denham Smith</p>
+                                <p>核心洞察：<strong>焦慮在資訊真空中茁壯</strong>。即使是不完整的資訊，也比沉默好。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== TAB 3: AI 與危機 ===== -->
+            <div id="tab-ai-crisis" class="tab-content">
+
+                <!-- Tip 5: AI and Psychological Safety -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Tip 5</div>
+                        <div class="part-title">導入 AI 時，聚焦心理安全感</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">導入 AI 改變了你的團隊如何一起工作。當領導者往往聚焦在工具和自動化時，真正的影響往往表現為<span class="highlight">人際信任、協調和決策品質的下降</span>。為了避免這種功能障礙，要將 AI 導入視為<span class="highlight">團隊發展的工作</span>——而不只是技術升級。</p>
+                            <p class="en">"While leaders often focus on tools and automation, the real impact often shows up as declining interpersonal trust, coordination, and decision-making."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>將 AI 導入重新框架為學習過程。</strong>AI 工具應該在<span class="highlight">期待探索而非完美</span>的前提下被引入。傳達早期失誤是寶貴的學習時刻，不是失敗。讓質疑 AI 成為常態，而非警訊。</p>
+                            <p class="en">"AI tools should be introduced with the expectation of discovery, not perfection. Signal that early missteps are valuable learning moments, not failures."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>示範易錯性和好奇心。</strong>公開承認 AI 輸出讓你困惑的時候，或你使用它犯過的錯誤。<strong>建立聰明失敗的協議。</strong><span class="highlight">區分聰明的風險和粗心的錯誤</span>。先在低風險場景中測試 AI，收集反饋，然後調整。</p>
+                            <p class="en">"Openly admit when AI outputs confuse you or when you've made mistakes using it. Differentiate between smart risks and sloppy mistakes."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>強調人際連結。</strong>當 AI 接手更多任務時，你團隊的<span class="highlight">人際協作變得更加關鍵</span>。不要讓自動化消磨了人與人之間的互動。</p>
+                            <p class="en">"As AI takes on more tasks, your team's interpersonal collaboration becomes even more critical."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">📚 核心概念</div>
+                            <div class="info-box-content">
+                                <p><strong>AI 導入的心理安全四策略</strong></p>
+                                <table class="data-table">
+                                    <tr><th>策略</th><th>行動</th><th>效果</th></tr>
+                                    <tr><td>重框架為學習</td><td>期待探索，非完美</td><td>降低恐懼門檻</td></tr>
+                                    <tr><td>示範易錯性</td><td>公開承認 AI 困惑</td><td>建立安全的實驗文化</td></tr>
+                                    <tr><td>聰明失敗協議</td><td>低風險測試 → 反饋 → 調整</td><td>區分好風險和壞錯誤</td></tr>
+                                    <tr><td>強化人際連結</td><td>保護團隊互動空間</td><td>防止自動化侵蝕關係</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div class="info-box-content">
+                                <p>在 CDMO 導入 AI，就像在無菌產線引入新設備。你不會直接上 GMP 批次——你會先做 IQ/OQ/PQ 驗證（低風險測試），允許偏差和調整（聰明失敗協議），確保操作員理解新設備的能力和限制（示範易錯性），並且不會因為自動化而取消人工查檢（強化人際連結）。導入 AI 的邏輯完全一樣。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>來源：</strong>Jayshree Seth &amp; Amy C. Edmondson</p>
+                                <p>這是 Edmondson 將心理安全感概念<strong>延伸到 AI 導入場景</strong>的最新應用。核心觀點：AI 的技術面只是冰山一角，<strong>團隊動態才是決定成敗的 80%</strong>。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip 6: Tough Leadership Decisions -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Tip 6</div>
+                        <div class="part-title">更好地處理高壓領導決策</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">作為領導者，你在高壓時刻做出的決策，影響遠遠超出法律或營運層面：它們<span class="highlight">塑造信任、文化和你的可信度</span>。當每個選項看起來都充滿風險時，以下是如何以清晰和關懷來領導。</p>
+                            <p class="en">"The decisions you make in high-stakes moments carry weight far beyond legal or operational impact: They shape trust, culture, and your credibility."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>繪製取捨，而非憑直覺反應。</strong>重大決策——想想重組、裁員和政策轉變——承載法律、聲譽和文化風險。<span class="highlight">不要孤立地評估那些風險</span>。</p>
+                            <p class="en">"Big decisions—think restructuring, layoffs, and policy shifts—carry legal, reputational, and cultural risks. Don't assess those risks in isolation."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>推出前先壓力測試。</strong>即使是好的決策，如果讓人措手不及也會<span class="highlight">反效果</span>。<strong>用原則引導混亂的決策。</strong>政策很重要，但原則塑造了人們<span class="highlight">體驗變革的方式</span>。</p>
+                            <p class="en">"Even good decisions land badly if they catch people off guard. Policies are important, but principles shape how people experience change."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>說出正在發生什麼以及為什麼。</strong>不要讓人們自己填空。要具體。承認什麼是困難的。<span class="highlight">分享什麼仍然是未知的。</span></p>
+                            <p class="en">"Don't let people fill in the blanks. Be specific. Acknowledge what's hard. Share what's still unknown."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #a7f3d0;">🛠️ 實務應用</div>
+                            <div class="info-box-content">
+                                <p><strong>高壓決策的四步框架</strong></p>
+                                <ul>
+                                    <li><strong>Step 1 繪製取捨</strong> — 法律 + 聲譽 + 文化風險全盤分析</li>
+                                    <li><strong>Step 2 壓力測試</strong> — 在小範圍內預先測試反應</li>
+                                    <li><strong>Step 3 原則引導</strong> — 不只看政策，更看價值觀</li>
+                                    <li><strong>Step 4 透明溝通</strong> — 說出為什麼、什麼是困難的、什麼未知</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div class="info-box-content">
+                                <p>高壓決策就像 CDMO 的批次放行決定。當環境監控數據出現邊界值，你不能只看法規（政策），還要考慮產品安全（原則）、客戶關係（聲譽）和團隊士氣（文化）。而最重要的是——向團隊解釋<strong>為什麼做出這個決定</strong>，否則他們會編出自己的故事。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>來源：</strong>Daisy Auger-Dominguez</p>
+                                <p>核心洞察：決策的<strong>品質</strong>很重要，但決策的<strong>溝通方式</strong>同樣塑造信任。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== TAB 4: 韌性與追隨 ===== -->
+            <div id="tab-resilience" class="tab-content">
+
+                <!-- Tip 7: Mitigate Loneliness -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Tip 7</div>
+                        <div class="part-title">緩解團隊中的孤獨感</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">孤獨不只是個人的掙扎——它是一個<span class="highlight">悄悄侵蝕信任、創造力和績效的職場挑戰</span>。作為領導者，你可以透過將連結直接嵌入團隊的工作方式來反制它。</p>
+                            <p class="en">"Loneliness isn't just a personal struggle—it's a workplace challenge that quietly erodes trust, creativity, and performance."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>透過共同身份建立團隊凝聚力。</strong>創造<span class="highlight">共同敘事和簡單的儀式</span>來強化歸屬感。<strong>設計能建立信任的協作方式。</strong>將關係建立視為工作的核心部分。</p>
+                            <p class="en">"Create shared narratives and simple rituals that reinforce belonging. Treat relationship-building as a core part of work."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>以人性化示範來建立韌性。</strong>在團隊會議開始時進行快速簽到。<strong>透過系統將歸屬感制度化。</strong>將連結<span class="highlight">融入考核、入職和文化儀式</span>中。</p>
+                            <p class="en">"Open team meetings with quick check-ins. Bake connection into reviews, onboarding, and cultural rituals."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>以身作則，承認自己對連結的需要。</strong>當領導者願意展現脆弱性，團隊才會感到安全去做同樣的事。</p>
+                            <p class="en">"Set the tone by acknowledging your own need for connection."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">📚 核心概念</div>
+                            <div class="info-box-content">
+                                <p><strong>消除職場孤獨的五個支柱</strong></p>
+                                <ul>
+                                    <li><strong>共同身份</strong> — 敘事 + 儀式 → 歸屬感</li>
+                                    <li><strong>信任協作</strong> — 關係建立 = 工作的一部分</li>
+                                    <li><strong>人性示範</strong> — 會議快速簽到</li>
+                                    <li><strong>系統化歸屬</strong> — 融入考核、入職、儀式</li>
+                                    <li><strong>領導脆弱性</strong> — 承認自己也需要連結</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div class="info-box-content">
+                                <p>職場孤獨感就像潔淨室的微小裂縫——肉眼看不見，但長期下來會讓整個環境失控。你不能等到感染事件才修補，而是要在日常維護中就把「連結」當作環境控制的一環來設計和執行。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>來源：</strong>Kristin Gleitsman &amp; Luis Velasquez</p>
+                                <p>孤獨感是<strong>隱藏的績效殺手</strong>。它不會出現在 KPI 儀表板上，但會反映在離職率、創新停滯和信任缺失中。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip 8: Lead Through Chaos -->
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="part-label">Tip 8</div>
+                        <div class="part-title">在混亂中用價值觀領導</div>
+
+                        <div class="bilingual-block">
+                            <p class="zh">當破壞不斷來襲，領導力需要在<span class="highlight">快速適應的同時保持紮根於你的目的</span>。</p>
+                            <p class="en">"When disruption is constant, leadership requires the ability to adapt quickly while staying grounded in your purpose."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>先面對殘酷的事實。</strong>不要浪費精力捍衛過時的策略。<strong>重新承諾你的價值觀。</strong>外部壓力可能推動你妥協你宣示的目的，但<span class="highlight">一致性建立信任</span>。</p>
+                            <p class="en">"Don't waste energy defending outdated strategies. External pressure can push you to compromise your stated purpose, but consistency builds trust."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>調整策略，而非身份。</strong>敏捷很關鍵，但只有在<span class="highlight">繫於最重要之事</span>時才有意義。<strong>賦能你的團隊。</strong>不要獨自解決每個問題。</p>
+                            <p class="en">"Agility is critical, but only when it's tethered to what matters most. Don't solve every problem alone."</p>
+                        </div>
+
+                        <div class="bilingual-block">
+                            <p class="zh"><strong>主動出擊。</strong>防守動作在不確定時期很誘人。但適時的<span class="highlight">主動投資於創新、人才或商業模式</span>可以讓你脫穎而出。</p>
+                            <p class="en">"Well-timed, proactive investments in innovation, talent, or business models can set you apart."</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #bbf7d0;">📚 核心概念</div>
+                            <div class="info-box-content">
+                                <p><strong>混亂時代的五步價值觀領導</strong></p>
+                                <table class="data-table">
+                                    <tr><th>步驟</th><th>行動</th></tr>
+                                    <tr><td>1. 面對事實</td><td>停止捍衛過時策略</td></tr>
+                                    <tr><td>2. 重承諾價值</td><td>一致性建立信任</td></tr>
+                                    <tr><td>3. 調整策略非身份</td><td>敏捷繫於核心目的</td></tr>
+                                    <tr><td>4. 賦能團隊</td><td>分散問題解決權</td></tr>
+                                    <tr><td>5. 主動出擊</td><td>在防守中找進攻機會</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fef3c7;">💡 比喻說明</div>
+                            <div name="info-box-content" class="info-box-content">
+                                <p>就像 CDMO 面對藥品法規的重大變革。你可以花大量精力抵制變革（捍衛過時策略），或者你可以接受新法規、重新定位能力（調整策略），但始終堅持病人安全這個核心價值觀（不改變身份）。最聰明的 CDMO 會在變革中主動投資新技術和新能力，而不是只做被動合規。</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="info-box-header" style="background: #fed7aa;">⚠️ 重點提示</div>
+                            <div class="info-box-content">
+                                <p><strong>來源：</strong>Dana H. Born et al., "5 Ways Organizations Can Pivot with Purpose"</p>
+                                <p>核心公式：<strong>面對事實 + 堅守價值 + 敏捷行動 = 有目的的轉型</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========== KEY TAKEAWAYS ========== -->
+        <h2 class="section-title">重點整理 Key Takeaways</h2>
+        <div class="takeaways-grid">
+            <div class="hover-card">
+                <h4>🤝 信任是網狀的，不是線性的</h4>
+                <p>高績效團隊的信任不只建立在主管與員工之間，更在同儕之間。透過協作設計、資訊透明、功勞共享和健康衝突，逐次互動地編織信任之網。心理安全感的核心是允許坦誠，而非營造表面和諧。</p>
+            </div>
+            <div class="hover-card">
+                <h4>📊 你不衡量的東西，你無法管理</h4>
+                <p>信任必須像財務績效一樣被衡量、追蹤和管理。選擇工具、持續監控、數據驅動行動、外部標竿——四步循環讓信任從抽象概念變成可管理的指標，讓領導者能識別感知與現實之間的差距。</p>
+            </div>
+            <div class="hover-card">
+                <h4>🤖 AI 導入是團隊發展工作，不只是技術升級</h4>
+                <p>AI 對信任的最大威脅不在技術本身，而在於它改變了人際互動和決策方式。將 AI 導入框架為學習過程、示範易錯性、建立聰明失敗協議、強化人際連結——這些是維護信任的關鍵策略。</p>
+            </div>
+            <div class="hover-card">
+                <h4>🧭 危機中的信任，靠清晰、價值觀和追隨力</h4>
+                <p>在不確定時代，領導者需要傳達清晰目的、以身作則、保持冷靜。同時，偉大的領導者也是偉大的追隨者——主動傾聽、目的導向、可靠交付、歡迎挑戰、保持可教練性，是信任的完整閉環。</p>
+            </div>
+        </div>
+
+        <!-- ========== PRACTICE ========== -->
+        <h2 class="section-title">練習題 Practice Questions</h2>
+
+        <details class="question-accordion">
+            <summary class="question-header">
+                <span class="question-number">Q1</span>
+                <span class="question-type">概念理解</span>
+                <span class="question-text">Amy Edmondson 指出心理安全感有五大迷思。為什麼「友善」和「坦誠」的區分如此重要？在哪些場景中，過度友善反而會傷害團隊信任？</span>
+                <span class="accordion-icon"></span>
+            </summary>
+            <div class="question-answer">
+                <p>「友善」和「坦誠」的區分之所以重要，是因為它們代表兩種完全不同的團隊文化：</p>
+                <ul>
+                    <li><strong>友善文化</strong>：迴避困難對話，表面和諧但問題被壓在水面下，長期累積會爆發成更大的信任危機</li>
+                    <li><strong>坦誠文化</strong>：允許直接表達不同意見和困難真相，短期可能不舒服，但長期建立深厚的信任基礎</li>
+                </ul>
+                <p><strong>過度友善傷害信任的典型場景：</strong></p>
+                <ul>
+                    <li>績效評核時只給正面回饋，員工被蒙在鼓裡直到被裁員</li>
+                    <li>會議中沒人質疑明顯有問題的計畫，導致團體迷思（Groupthink）</li>
+                    <li>團隊成員之間的衝突被迴避而非化解，持續發酵成派系</li>
+                    <li>安全或品質問題因為「不想讓人難堪」而沒被通報</li>
+                </ul>
+                <p>真正的心理安全感是：我可以告訴你「這個做法有風險」，你會感謝我的坦誠，而不是懲罰我的「不友善」。</p>
+            </div>
+        </details>
+
+        <details class="question-accordion">
+            <summary class="question-header">
+                <span class="question-number">Q2</span>
+                <span class="question-type">產業應用</span>
+                <span class="question-text">作為製藥 CDMO（無菌充填）的營運主管，你正在推動 AI 自動化批次記錄系統。團隊中有資深操作員表達擔憂，擔心 AI 會取代他們的工作。根據本文的建議，你會如何設計導入策略來維護心理安全感和團隊信任？</span>
+                <span class="accordion-icon"></span>
+            </summary>
+            <div class="question-answer">
+                <p>結合文中 Tip 5（AI 與心理安全感）和 Tip 9（工作安全焦慮）的建議，設計以下導入策略：</p>
+                <p><strong>Phase 1: 承認與框架（第 1 週）</strong></p>
+                <ul>
+                    <li>召開坦誠的團隊會議，承認「自動化會讓人焦慮」——先處理情緒</li>
+                    <li>明確說明：AI 是「輔助工具」，不是「取代計畫」——將自動化框架為學習過程</li>
+                    <li>分享你自己使用 AI 時犯的錯誤——示範易錯性</li>
+                </ul>
+                <p><strong>Phase 2: 參與式設計（第 2-4 週）</strong></p>
+                <ul>
+                    <li>邀請資深操作員擔任「AI 導入大使」——他們的製程知識是 AI 無法取代的</li>
+                    <li>先在非 GMP 環境測試，收集反饋——聰明失敗協議</li>
+                    <li>讓團隊共同定義「AI 做什麼、人做什麼」的邊界——共創下一步</li>
+                </ul>
+                <p><strong>Phase 3: 持續溝通（持續）</strong></p>
+                <ul>
+                    <li>每週分享進度和學習——縮小不確定性</li>
+                    <li>公開認可操作員在導入過程中的貢獻——分享功勞</li>
+                    <li>保留團隊聚會和面對面互動——強化人際連結</li>
+                </ul>
+                <p><strong>核心原則：</strong>技術導入速度要配合人心準備程度。在 GMP 環境中，信任不只影響團隊士氣，更直接影響產品安全和合規。</p>
+            </div>
+        </details>
+
+        <details class="question-accordion">
+            <summary class="question-header">
+                <span class="question-number">Q3</span>
+                <span class="question-type">批判思考</span>
+                <span class="question-text">文章建議「讓信任可以被衡量」（Tip 3），同時強調「信任必須一次互動一次互動地建構」（Tip 2）。這兩個觀點之間是否存在張力？衡量信任的行為本身，是否可能反而傷害信任？</span>
+                <span class="accordion-icon"></span>
+            </summary>
+            <div class="question-answer">
+                <p>這是一個深刻的張力，值得認真思考：</p>
+                <p><strong>衡量信任可能傷害信任的場景：</strong></p>
+                <ul>
+                    <li><strong>監控感</strong>：如果員工感覺信任調查是「被監視」而非「被關心」，反而會降低心理安全感</li>
+                    <li><strong>數據化陷阱</strong>：管理者可能過度聚焦在數字上，忽略了真正建立信任的日常互動</li>
+                    <li><strong>表演效應</strong>：知道被衡量後，人們可能「表演信任」而非真實展現——類似 Hawthorne Effect</li>
+                    <li><strong>問責壓力</strong>：如果信任分數被用來懲罰低分的團隊或主管，會適得其反</li>
+                </ul>
+                <p><strong>化解張力的方法：</strong></p>
+                <ul>
+                    <li>衡量的目的是<strong>診斷和改善</strong>，而非評判和問責</li>
+                    <li>將信任衡量視為<strong>溫度計</strong>（了解狀態），而非<strong>恆溫器</strong>（控制結果）</li>
+                    <li>衡量結果要<strong>透明地回饋給團隊</strong>，讓他們參與改善計畫</li>
+                    <li>量化指標要和質性觀察<strong>並行</strong>——數字告訴你「什麼」，對話告訴你「為什麼」</li>
+                </ul>
+                <p><strong>結論：</strong>信任的衡量和建構不是對立的，而是互補的——但前提是衡量本身要以信任的方式來執行。如果你用「不信任」的方式去「衡量信任」，結果注定適得其反。</p>
+            </div>
+        </details>
+
+        <!-- ========== BOTTOM LINE ========== -->
+        <div class="bottom-line">
+            <h3>我的行動結論 Bottom Line for Me</h3>
+
+            <div class="bottom-line-item">
+                <h4>✔ 核心洞察</h4>
+                <p>信任不是一個抽象的「好東西」，而是一個可以被系統性建構和管理的營運基礎設施。從同儕互信（Tip 1）到心理安全感（Tip 2），從量化衡量（Tip 3）到危機中的穩定領導（Tip 4），再到 AI 導入時的信任維護（Tip 5），這十則管理心法構成了一個完整的「信任作業系統」。作為一個正在推動 AI 自動化、帶領製藥 CDMO 產線的營運主管，我需要意識到：<strong>我推動的每一個技術變革，都在考驗團隊的信任基礎。</strong>技術導入的成功，80% 取決於信任和團隊動態，而非技術本身。</p>
+            </div>
+
+            <div class="bottom-line-item">
+                <h4>📈 立即應用</h4>
+                <p>1. <strong>本週</strong>：在下次團隊會議中引入「快速簽到」機制（Tip 7），開始建立連結的習慣。2. <strong>本週</strong>：檢視我在 BPR 自動化專案中的溝通方式——是否有足夠的「探索而非完美」的信號（Tip 5）？3. <strong>本月</strong>：設計一個簡易的信任脈搏調查，嘗試量化團隊信任狀態（Tip 3），並在管理會議中分享結果。4. <strong>持續</strong>：練習「追隨力」——在與 CEO 和跨部門主管互動時，刻意展現主動傾聽和放下自我（Tip 10）。</p>
+            </div>
+
+            <div class="bottom-line-item">
+                <h4>⚠ 需要補充</h4>
+                <p>這篇合集的最大限制是：每個主題都只是淺嚐即止，缺乏深度的實施指南。特別需要進一步閱讀：(1) Edmondson 的《The Fearless Organization》完整了解心理安全感的實施框架；(2) John Blakey 的信任衡量模型細節；(3) 製藥產業特有的信任建構案例研究（GMP 環境中的偏差通報文化）。建議 3 個月後在 AI 導入階段中期重讀 Tip 5，對照實際執行狀況調整策略。</p>
+            </div>
+        </div>
+
+        <!-- ========== FOOTER ========== -->
+        <div class="footer">
+            <p>製作日期：2026-02-27 ｜ 來源：<a href="https://hbr.org" target="_blank">Harvard Business Review</a> - HBR Editorial Staff</p>
+            <p>AI Expert Learning System v1.6 ｜ Processed via Claude Code (Opus 4.6)</p>
+            <p>建議 Chat Title：2026-02-27 [Framework] HBR - Building Trust Team Tips</p>
+        </div>
+
+    </div>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        function switchTab(evt, tabId) {
+            const container = evt.currentTarget.closest('.tab-container');
+            container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
