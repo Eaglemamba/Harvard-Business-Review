@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>團隊的紀律 - HBR 導讀 | Katzenbach & Smith</title>
+
+<!-- Dashboard Index Meta -->
+<meta name="doc-date" content="2026-03-05">
+<meta name="doc-title" content="團隊的紀律 - Katzenbach & Smith HBR">
+<meta name="doc-source" content="Jon R. Katzenbach & Douglas K. Smith / HBR 2005">
+<meta name="doc-tags" content="Framework,Analysis,Leadership">
+<meta name="doc-rating" content="3.6">
+<meta name="doc-summary" content="真正的團隊 vs. 工作小組：五要素框架、三類型團隊、互信與當責的建立。">
+<meta name="doc-file" content="2026-03-05_discipline-of-teams.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.8;
+}
+.header {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, #1e3a5f 0%, #3b5998 50%, #5b7fb5 100%);
+    color: white;
+}
+.header-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+.tag { font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 999px; }
+.tag-framework { background: #c7d2fe; color: #3730a3; }
+.tag-analysis { background: #a7f3d0; color: #065f46; }
+.tag-leadership { background: #fecdd3; color: #9f1239; }
+.header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+.header-subtitle { font-size: 1rem; opacity: 0.85; margin-bottom: 0.5rem; }
+.header-source { font-size: 0.85rem; opacity: 0.7; }
+.container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+.executive-summary {
+    background: white; border-radius: 1rem; padding: 1.5rem; margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 5px solid #3b82f6;
+}
+.executive-summary h2 { font-size: 1rem; font-weight: 700; color: #1e3a8a; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+.summary-card { background: #f8fafc; border-radius: 0.75rem; padding: 1rem; transition: transform 0.2s, box-shadow 0.2s; }
+.summary-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.summary-card .label { font-size: 0.7rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem; }
+.summary-card .value { font-size: 0.9rem; font-weight: 600; color: #1e293b; line-height: 1.6; }
+.rating-bar { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; padding: 0.75rem 1rem; background: #f1f5f9; border-radius: 0.5rem; }
+.rating-score { font-weight: 700; color: #1e293b; font-size: 0.95rem; }
+.rating-stars { color: #f59e0b; }
+.rating-high { font-size: 0.8rem; font-weight: 600; color: #065f46; background: #d1fae5; padding: 0.2rem 0.6rem; border-radius: 0.25rem; }
+.rating-low { font-size: 0.8rem; font-weight: 600; color: #64748b; background: #e2e8f0; padding: 0.2rem 0.6rem; border-radius: 0.25rem; }
+
+.section-title { font-size: 1.1rem; font-weight: 700; color: #1e3a8a; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e2e8f0; }
+.objectives-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+.objective-item { background: white; border-radius: 0.75rem; padding: 1.25rem; border-top: 4px solid #3b82f6; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+.objective-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.objective-item:nth-child(2) { border-top-color: #10b981; }
+.objective-item:nth-child(3) { border-top-color: #8b5cf6; }
+.objective-num { font-size: 0.7rem; font-weight: 700; color: #3b82f6; text-transform: uppercase; margin-bottom: 0.5rem; }
+.objective-item:nth-child(2) .objective-num { color: #10b981; }
+.objective-item:nth-child(3) .objective-num { color: #8b5cf6; }
+.objective-item p { font-size: 0.875rem; color: #374151; line-height: 1.65; }
+
+.framework-visual { background: linear-gradient(135deg, #1e3a5f, #3b5998); border-radius: 1rem; padding: 1.75rem; color: white; margin-bottom: 2rem; }
+.framework-title { text-align: center; font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; opacity: 0.9; }
+.framework-steps { display: flex; justify-content: center; align-items: flex-start; gap: 0.5rem; flex-wrap: wrap; }
+.framework-step { text-align: center; min-width: 110px; max-width: 135px; }
+.framework-icon { font-size: 1.3rem; width: 3rem; height: 3rem; background: rgba(255,255,255,0.2); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; }
+.framework-step-title { font-weight: 700; font-size: 0.82rem; margin-bottom: 0.2rem; }
+.framework-step-desc { font-size: 0.72rem; opacity: 0.85; line-height: 1.4; }
+.framework-arrow { font-size: 1.25rem; color: #93c5fd; align-self: center; padding-bottom: 1rem; }
+@media (max-width: 600px) { .framework-arrow { display: none; } }
+
+.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 2rem; }
+.content-left { padding: 1.5rem; border-right: 1px solid #e2e8f0; background: white; }
+.content-right { padding: 1.5rem; background: #fafbfd; }
+.part-header { grid-column: 1 / -1; background: linear-gradient(90deg, #1e3a5f, #3b5998); color: white; padding: 0.85rem 1.5rem; }
+.part-label { font-size: 0.72rem; font-weight: 700; opacity: 0.75; text-transform: uppercase; letter-spacing: 0.05em; }
+.part-title { font-size: 1rem; font-weight: 700; }
+.col-header { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; }
+
+.bilingual-block { margin-bottom: 1.25rem; }
+.bilingual-block .zh { font-size: 0.9rem; color: #1e293b; line-height: 1.75; margin-bottom: 0.25rem; }
+.bilingual-block .zh mark { background: #fef9c3; padding: 0 0.1rem; border-radius: 2px; }
+.bilingual-block .en { font-size: 0.8rem; color: #64748b; font-style: italic; line-height: 1.6; }
+
+.info-box { border-radius: 0.75rem; margin-bottom: 1.1rem; overflow: hidden; border: 1px solid #e2e8f0; }
+.info-box-header { padding: 0.45rem 0.85rem; font-size: 0.77rem; font-weight: 700; display: flex; align-items: center; gap: 0.4rem; }
+.info-box-body { padding: 0.85rem; font-size: 0.875rem; line-height: 1.7; color: #374151; }
+.info-box-body ul { padding-left: 1.25rem; }
+.info-box-body li { margin-bottom: 0.3rem; }
+.info-box-body strong { color: #1e293b; }
+.box-concept .info-box-header { background: #bbf7d0; color: #065f46; }
+.box-analogy .info-box-header { background: #fef3c7; color: #92400e; }
+.box-warning .info-box-header { background: #fed7aa; color: #92400e; }
+.box-practice .info-box-header { background: #a7f3d0; color: #065f46; }
+.box-compare .info-box-header { background: #c7d2fe; color: #3730a3; }
+
+.compare-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 0.5rem 0; }
+.compare-table th { background: #1e3a5f; color: white; padding: 0.5rem 0.75rem; text-align: left; font-weight: 600; }
+.compare-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #e2e8f0; vertical-align: top; line-height: 1.55; }
+.compare-table tr:nth-child(even) td { background: #f8fafc; }
+.compare-table tr:last-child td { border-bottom: none; }
+
+.takeaways-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+.hover-card { background: white; border-radius: 0.75rem; padding: 1.25rem; border-left: 4px solid #3b82f6; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+.hover-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+.hover-card:nth-child(2) { border-left-color: #10b981; }
+.hover-card:nth-child(3) { border-left-color: #8b5cf6; }
+.hover-card:nth-child(4) { border-left-color: #f59e0b; }
+.hover-card .card-num { font-size: 0.68rem; font-weight: 700; color: #3b82f6; text-transform: uppercase; margin-bottom: 0.4rem; }
+.hover-card:nth-child(2) .card-num { color: #10b981; }
+.hover-card:nth-child(3) .card-num { color: #8b5cf6; }
+.hover-card:nth-child(4) .card-num { color: #f59e0b; }
+.hover-card h4 { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin-bottom: 0.4rem; }
+.hover-card p { font-size: 0.875rem; color: #374151; line-height: 1.6; }
+
+.practice-section { margin-bottom: 2rem; }
+.question-accordion { background: white; border-radius: 0.75rem; margin-bottom: 0.75rem; border: 1px solid #e9d5ff; overflow: hidden; }
+.question-header { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; padding: 1rem 1.25rem; cursor: pointer; list-style: none; }
+.question-header::-webkit-details-marker { display: none; }
+.question-number { font-weight: 700; color: #6d28d9; min-width: 1.75rem; }
+.question-type { font-size: 0.72rem; font-weight: 600; color: #6d28d9; background: #e9d5ff; padding: 0.2rem 0.5rem; border-radius: 0.25rem; white-space: nowrap; }
+.question-text { flex: 1; font-size: 0.92rem; color: #374151; min-width: 200px; }
+.accordion-icon { width: 1.25rem; height: 1.25rem; transition: transform 0.2s; flex-shrink: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237c3aed'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") center/contain no-repeat; }
+details[open] .accordion-icon { transform: rotate(180deg); }
+.question-answer { padding: 1rem 1.25rem; background: #faf5ff; border-top: 1px solid #e9d5ff; font-size: 0.875rem; line-height: 1.75; color: #374151; }
+.question-answer p { margin-bottom: 0.75rem; }
+.question-answer p:last-child { margin-bottom: 0; }
+.question-answer ul { padding-left: 1.5rem; margin: 0.5rem 0; }
+.question-answer li { margin-bottom: 0.3rem; }
+
+.bottom-line { background: linear-gradient(135deg, #1e3a5f, #3b5998); color: white; border-radius: 1rem; padding: 1.75rem; margin-bottom: 2rem; }
+.bottom-line h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; opacity: 0.9; }
+.bottom-line-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+.bl-item { background: rgba(255,255,255,0.12); border-radius: 0.75rem; padding: 1rem; }
+.bl-item .bl-label { font-size: 0.78rem; font-weight: 700; opacity: 0.8; margin-bottom: 0.5rem; }
+.bl-item p { font-size: 0.875rem; line-height: 1.65; opacity: 0.95; }
+
+.footer { text-align: center; font-size: 0.8rem; color: #94a3b8; padding: 1.5rem 0; border-top: 1px solid #e2e8f0; }
+.footer a { color: #3b82f6; }
+.chat-title-box { display: inline-block; background: #f1f5f9; border-radius: 0.5rem; padding: 0.35rem 0.85rem; font-family: 'Source Code Pro', monospace; font-size: 0.8rem; color: #334155; margin-top: 0.5rem; }
+
+@media (max-width: 768px) {
+    .container { padding: 1rem; }
+    .content-grid { grid-template-columns: 1fr; }
+    .content-left { border-right: none; border-bottom: 1px solid #e2e8f0; }
+    .objectives-grid, .summary-grid, .takeaways-grid, .bottom-line-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-tags">
+        <span class="tag tag-framework">Framework</span>
+        <span class="tag tag-analysis">Analysis</span>
+        <span class="tag tag-leadership">Leadership</span>
+    </div>
+    <h1>團隊的紀律</h1>
+    <div class="header-subtitle">The Discipline of Teams</div>
+    <div class="header-source">Jon R. Katzenbach &amp; Douglas K. Smith｜Harvard Business Review, July–August 2005</div>
+</div>
+
+<div class="container">
+
+<!-- Executive Summary -->
+<div class="executive-summary">
+    <h2>Executive Summary</h2>
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="label">核心論點</div>
+            <div class="value">「團隊」不是稱謂，是紀律。真正的團隊需符合五項要素，才能產生超越個人總和的績效。</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">關鍵框架</div>
+            <div class="value">真團隊定義：小規模 + 互補技能 + 共同目的 + 具體績效目標 + 共同工作方式與當責。</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">管理意涵</div>
+            <div class="value">並非所有任務都需要團隊。正確判斷「何時用團隊、何時用工作小組」是管理者的核心決策。</div>
+        </div>
+    </div>
+    <div class="rating-bar">
+        <span class="rating-score"><span class="rating-stars">★★★★☆</span> 3.6 / 5</span>
+        <span class="rating-high">↑ 實務應用 · 學習曲線</span>
+        <span class="rating-low">↓ 工具生態 · 時效性</span>
+    </div>
+</div>
+
+<!-- Learning Objectives -->
+<div class="section-title">學習目標 Learning Objectives</div>
+<div class="objectives-grid">
+    <div class="objective-item">
+        <div class="objective-num">目標 01</div>
+        <p>能清楚區分「真正的團隊」與「工作小組」的本質差異，並說明各自適用情境。</p>
+    </div>
+    <div class="objective-item">
+        <div class="objective-num">目標 02</div>
+        <p>掌握高效能團隊的五項核心要素，能用於評估現有工作團隊的成熟度。</p>
+    </div>
+    <div class="objective-item">
+        <div class="objective-num">目標 03</div>
+        <p>理解三類型團隊（建議型、執行型、管理型）各自的挑戰，並知道如何針對性支持。</p>
+    </div>
+</div>
+
+<!-- Framework Visual -->
+<div class="framework-visual">
+    <div class="framework-title">真正團隊的五項核心要素 — The Team Discipline</div>
+    <div class="framework-steps">
+        <div class="framework-step">
+            <div class="framework-icon">👥</div>
+            <div class="framework-step-title">小規模</div>
+            <div class="framework-step-desc">2–25人，多數少於10人</div>
+        </div>
+        <div class="framework-arrow">→</div>
+        <div class="framework-step">
+            <div class="framework-icon">🧩</div>
+            <div class="framework-step-title">互補技能</div>
+            <div class="framework-step-desc">技術、問題解決、人際三類</div>
+        </div>
+        <div class="framework-arrow">→</div>
+        <div class="framework-step">
+            <div class="framework-icon">🎯</div>
+            <div class="framework-step-title">共同目的</div>
+            <div class="framework-step-desc">有意義、成員共同形塑</div>
+        </div>
+        <div class="framework-arrow">→</div>
+        <div class="framework-step">
+            <div class="framework-icon">📊</div>
+            <div class="framework-step-title">具體績效目標</div>
+            <div class="framework-step-desc">可衡量、與目的連動</div>
+        </div>
+        <div class="framework-arrow">→</div>
+        <div class="framework-step">
+            <div class="framework-icon">🤝</div>
+            <div class="framework-step-title">共同當責</div>
+            <div class="framework-step-desc">互信、集體負責</div>
+        </div>
+    </div>
+</div>
+
+<!-- Part 1 -->
+<div class="content-grid">
+    <div class="part-header">
+        <div class="part-label">Part I</div>
+        <div class="part-title">團隊 vs. 工作小組：根本差異</div>
+    </div>
+    <div class="content-left">
+        <div class="col-header">原文精華（中英對照）</div>
+        <div class="bilingual-block">
+            <div class="zh">「工作小組的績效，是其成員個人貢獻的總和；而<mark>團隊的績效，則包含個人成果與「集體工作產品」</mark>兩者。」</div>
+            <div class="en">"A working group's performance is a function of what its members do as individuals. A team's performance includes both individual results and what we call 'collective work products.'"</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「工作小組的成員不為彼此以外的結果負責，也不嘗試共同創造需要兩人以上合作的增量績效貢獻。」</div>
+            <div class="en">"Working-group members don't take responsibility for results other than their own. Nor do they try to develop incremental performance contributions requiring the combined work of two or more members."</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「<mark>團隊從根本上不同於工作小組</mark>，因為它需要個人與共同的雙重當責（individual and mutual accountability）。」</div>
+            <div class="en">"Teams differ fundamentally from working groups because they require both individual and mutual accountability."</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「簡言之，一個團隊大於其各部分之和。」</div>
+            <div class="en">"Simply stated, a team is more than the sum of its parts."</div>
+        </div>
+    </div>
+    <div class="content-right">
+        <div class="col-header">導讀分析</div>
+        <div class="info-box box-analogy">
+            <div class="info-box-header">💡 比喻說明</div>
+            <div class="info-box-body">想像一支管弦樂團。每位演奏者都有個人技藝（工作小組層面），但交響樂的成果是無法由任何人獨自完成的——它必須在即時互動、共同詮釋下誕生。這就是「集體工作產品」的核心。相反，一個「委員會」開會後各自回去做自己的事，那是工作小組，不是團隊。</div>
+        </div>
+        <div class="info-box box-concept">
+            <div class="info-box-header">📚 核心概念：Collective Work Product（集體工作產品）</div>
+            <div class="info-box-body">需要「兩人以上共同完成」的輸出，例如：
+                <ul>
+                    <li>聯合使用者訪談</li>
+                    <li>共同設計的實驗或原型</li>
+                    <li>需即時整合多方判斷的客戶解決方案</li>
+                </ul>
+                這不是分工後各自提交，而是無法拆開、只能共同創造的產物。
+            </div>
+        </div>
+        <div class="info-box box-warning">
+            <div class="info-box-header">⚠️ 重點提示</div>
+            <div class="info-box-body"><strong>工作小組不是壞事</strong>——在個人當責最重要的情境下，它反而是更高效、風險更低的選擇。誤把工作小組強制「升格」為團隊，只會浪費時間、製造怨氣。</div>
+        </div>
+    </div>
+</div>
+
+<!-- Part 2 -->
+<div class="content-grid">
+    <div class="part-header">
+        <div class="part-label">Part II</div>
+        <div class="part-title">構成真正團隊的五項核心要素</div>
+    </div>
+    <div class="content-left">
+        <div class="col-header">原文精華（中英對照）</div>
+        <div class="bilingual-block">
+            <div class="zh">「一個團隊是：<mark>少數具備互補技能的人，共同承諾於一個共同目的、一套績效目標，以及共同的工作方式，並對此互相當責。</mark>」</div>
+            <div class="en">"A team is a small number of people with complementary skills who are committed to a common purpose, set of performance goals, and approach for which they hold themselves mutually accountable."</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「<mark>技能要求分為三類</mark>：技術或功能專業知識、問題解決與決策技能、人際技能。」</div>
+            <div class="en">"Skill requirements fall into three fairly self-evident categories: Technical or Functional Expertise, Problem-Solving and Decision-Making Skills, Interpersonal Skills."</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「在我們接觸過的所有成功團隊中，沒有任何一個在一開始就擁有全部所需的技能。<mark>團隊是發展所需技能的強大載體。</mark>」</div>
+            <div class="en">"In all the successful teams we've encountered, not one had all the needed skills at the outset... teams are powerful vehicles for developing the skills needed to meet the team's performance challenge."</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「<mark>共同當責無法被強制要求，</mark>就像人與人之間的信任無法被強迫一樣。但當一個團隊共享共同目的、目標和工作方式時，互相當責自然會隨之而生。」</div>
+            <div class="en">"Mutual accountability cannot be coerced any more than people can be made to trust one another. But when a team shares a common purpose, goals, and approach, mutual accountability grows as a natural counterpart."</div>
+        </div>
+    </div>
+    <div class="content-right">
+        <div class="col-header">導讀分析</div>
+        <div class="info-box box-concept">
+            <div class="info-box-header">📚 五要素拆解</div>
+            <div class="info-box-body">
+                <ul>
+                    <li><strong>小規模</strong>：2–25人，多數少於10人。人數過多，互動品質下降。</li>
+                    <li><strong>互補技能</strong>：不需一開始就齊全，但要有發展潛力。</li>
+                    <li><strong>共同目的</strong>（Purpose）：不是管理層下達的任務，而是成員共同「形塑」的意義。</li>
+                    <li><strong>具體績效目標</strong>：可衡量、與目的連動，提供對焦基準。</li>
+                    <li><strong>共同工作方式 + 共同當責</strong>：最容易被忽略，卻是最關鍵的兩項。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="info-box box-analogy">
+            <div class="info-box-header">💡 比喻：「社會契約」</div>
+            <div class="info-box-body">作者把「共同工作方式」的建立形容為成員之間的「社會契約（social contract）」。誰做什麼、怎麼決策、如何處理分歧——這些不是寫在 SOP 裡的，而是團隊在磨合中共同建立的信任基礎。</div>
+        </div>
+        <div class="info-box box-practice">
+            <div class="info-box-header">🛠️ 實務應用：AI 導入自我評估</div>
+            <div class="info-box-body">用五要素評估你的 AI 推廣小組：是否有可衡量的目標（如 Q3 前完成 X 個部門部署）？還是只有模糊的「提升 AI 使用率」？沒有具體目標的推廣小組，就只是工作小組，不是真正的團隊。</div>
+        </div>
+    </div>
+</div>
+
+<!-- Part 3 -->
+<div class="content-grid">
+    <div class="part-header">
+        <div class="part-label">Part III</div>
+        <div class="part-title">目的與目標的動態關係</div>
+    </div>
+    <div class="content-left">
+        <div class="col-header">原文精華（中英對照）</div>
+        <div class="bilingual-block">
+            <div class="zh">「最好的團隊投入大量時間與精力，去探索、形塑並認同一個屬於自己的目的——這種「目的化（purposing）」活動貫穿團隊生命周期始終。」</div>
+            <div class="en">"The best teams invest a tremendous amount of time and effort exploring, shaping, and agreeing on a purpose that belongs to them both collectively and individually. This 'purposing' activity continues throughout the life of the team."</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「<mark>將廣泛指令轉化為具體可衡量的績效目標，是團隊試圖形塑有意義目的的第一步，也是最穩妥的一步。</mark>」</div>
+            <div class="en">"Transforming broad directives into specific and measurable performance goals is the surest first step for a team trying to shape a purpose meaningful to its members."</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「具體目標具有強大的均衡效果，有利於團隊行為。當一群人挑戰自己縮短50%周期時間時，各自的頭銜、特權都退居幕後。」</div>
+            <div class="en">"Specific objectives have a leveling effect conducive to team behavior. When a small group of people challenge themselves to reduce cycle time by 50%, their respective titles, perks, and other stripes fade into the background."</div>
+        </div>
+    </div>
+    <div class="content-right">
+        <div class="col-header">導讀分析</div>
+        <div class="info-box box-concept">
+            <div class="info-box-header">📚 Purpose vs. Goal 的層次關係</div>
+            <div class="info-box-body">
+                <strong>目的（Purpose）</strong>：回答「我們為何存在？」—— 情感驅動，例如「證明所有孩子都能學習」。<br><br>
+                <strong>目標（Goals）</strong>：回答「我們如何衡量進展？」—— 理性追蹤，例如「讓數學及格率從40%提升到95%」。<br><br>
+                兩者缺一不可：沒有目的，目標冰冷無力；沒有目標，目的虛無縹緲。
+            </div>
+        </div>
+        <div class="info-box box-warning">
+            <div class="info-box-header">⚠️ 常見誤解</div>
+            <div class="info-box-body">許多管理者以為讓團隊「自己決定目的」才叫授權。但作者指出：大多數成功的團隊目的，是在回應高層設定的績效挑戰框架下形塑出來的——管理層負責設定「範圍」，團隊負責在範圍內創造「意義」。完全放手反而讓團隊失去方向。</div>
+        </div>
+        <div class="info-box box-practice">
+            <div class="info-box-header">🛠️ 具體目標的六大作用（檢核清單）</div>
+            <div class="info-box-body">
+                <ul>
+                    <li>定義出需要集體合作的工作產品</li>
+                    <li>促進清晰溝通與建設性衝突</li>
+                    <li>維持對結果的聚焦</li>
+                    <li>消弭位階，以貢獻度取代頭銜</li>
+                    <li>製造「小勝利」，建立動能</li>
+                    <li>提供情感能量與緊迫感</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Part 4 -->
+<div class="content-grid">
+    <div class="part-header">
+        <div class="part-label">Part IV</div>
+        <div class="part-title">三種團隊類型及其核心挑戰</div>
+    </div>
+    <div class="content-left">
+        <div class="col-header">原文精華（中英對照）</div>
+        <div class="bilingual-block">
+            <div class="zh">「大多數團隊可歸類為三種：<mark>建議事情的團隊、製造或執行事情的團隊，以及管理事情的團隊。</mark>每種類型都面臨一套獨特的挑戰。」</div>
+            <div class="en">"Most teams can be classified in one of three ways: teams that recommend things, teams that make or do things, and teams that run things. In our experience, each type faces a characteristic set of challenges."</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「建議型團隊最常遭遇的問題是『<mark>交接失誤（missing the handoff）</mark>』——建議提出後，無法讓負責執行的人真正接手推動。」</div>
+            <div class="en">"Missing the handoff is almost always the problem that stymies teams that recommend things."</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「執行型團隊的重點在於公司的『關鍵交付點（critical delivery points）』——成本與價值最直接被決定的地方。」</div>
+            <div class="en">"Top management should concentrate on what we call the company's 'critical delivery points'—places in the organization where the cost and value of the company's products and services are most directly determined."</div>
+        </div>
+        <div class="bilingual-block">
+            <div class="zh">「管理型團隊面臨的核心問題是：個人最佳表現的總和，是否已足以應對手上的績效挑戰？」</div>
+            <div class="en">"The main issue these teams face is determining whether... the sum of individual bests will suffice for the performance challenge at hand."</div>
+        </div>
+    </div>
+    <div class="content-right">
+        <div class="col-header">導讀分析</div>
+        <div class="info-box box-compare">
+            <div class="info-box-header">⚖️ 三類型比較</div>
+            <div class="info-box-body">
+                <table class="compare-table">
+                    <tr><th>類型</th><th>核心挑戰</th><th>管理重點</th></tr>
+                    <tr><td><strong>建議型</strong><br>（專案組、TF）</td><td>啟動快 + 交接不失誤</td><td>讓執行方從一開始就參與</td></tr>
+                    <tr><td><strong>執行型</strong><br>（第一線、產品）</td><td>找到「關鍵交付點」</td><td>不為做團隊而做團隊</td></tr>
+                    <tr><td><strong>管理型</strong><br>（高層、跨部門）</td><td>決定是否真需要團隊</td><td>高層真正的團隊多為小型非正式子集</td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="info-box box-analogy">
+            <div class="info-box-header">💡 比喻：建議型 = 外科會診</div>
+            <div class="info-box-body">建議型團隊就像會診小組——給出精準診斷後，最怕的是主刀醫師（執行者）沒有在會診時就理解方案。如果只是最後送一份報告過去，成功率極低。執行者要從一開始就參與過程，不只是收到最終報告。</div>
+        </div>
+        <div class="info-box box-practice">
+            <div class="info-box-header">🛠️ AI 導入的直接應用</div>
+            <div class="info-box-body">AI 推廣初期你的角色通常是「建議型團隊」。最大風險就是交接失誤——你做了完整的導入建議，但業務單位主管沒有在過程中參與，最後報告束之高閣。<br><br>
+            解法：讓業務單位在需求訪談、工具試驗階段就直接參與，而非最後才收到結論。</div>
+        </div>
+    </div>
+</div>
+
+<!-- Key Takeaways -->
+<div class="section-title">重點整理 Key Takeaways</div>
+<div class="takeaways-grid">
+    <div class="hover-card">
+        <div class="card-num">洞察 01</div>
+        <h4>「團隊」是一種紀律，不是一個標籤</h4>
+        <p>把一群人稱為「團隊」不會讓他們成為團隊。只有同時具備五要素——尤其是共同當責——才算真正的團隊。</p>
+    </div>
+    <div class="hover-card">
+        <div class="card-num">洞察 02</div>
+        <h4>工作小組有時比團隊更適合</h4>
+        <p>當任務可以靠個人分工完成時，強推團隊只會帶來更多摩擦和時間成本。判斷「何時需要集體工作產品」才是關鍵決策。</p>
+    </div>
+    <div class="hover-card">
+        <div class="card-num">洞察 03</div>
+        <h4>具體目標是最強的整合工具</h4>
+        <p>可衡量的績效目標能消弭位階差異、製造動能、維持聚焦。模糊目標是團隊解體的最常見原因。</p>
+    </div>
+    <div class="hover-card">
+        <div class="card-num">洞察 04</div>
+        <h4>共同當責是自然生長的，不是被要求的</h4>
+        <p>當目的、目標、工作方式三者都對齊，共同當責自然出現。試圖用外力強制要求當責，反而製造防衛心。</p>
+    </div>
+</div>
+
+<!-- Practice -->
+<div class="practice-section">
+    <div class="section-title">練習題 Practice Questions（點擊展開答案）</div>
+
+    <details class="question-accordion">
+        <summary class="question-header">
+            <span class="question-number">Q1</span>
+            <span class="question-type">概念理解</span>
+            <span class="question-text">文章定義「集體工作產品（collective work product）」的關鍵特徵是什麼？它和「分工後匯總」有何本質差異？</span>
+            <span class="accordion-icon"></span>
+        </summary>
+        <div class="question-answer">
+            <p>集體工作產品的關鍵特徵是：它必須由兩人以上「共同完成」，而不是各自完成後拼湊在一起。它反映了團隊成員真實的聯合貢獻（joint, real contribution）。</p>
+            <p>與「分工後匯總」的本質差異在於：後者仍是工作小組的運作模式——A 做 A 的部分，B 做 B 的部分，最後有人整合。集體工作產品需要在過程中持續互動和整合判斷，例如共同訪談、共同設計實驗——這些在互動瞬間就是「合產」而非「合併」。</p>
+        </div>
+    </details>
+
+    <details class="question-accordion">
+        <summary class="question-header">
+            <span class="question-number">Q2</span>
+            <span class="question-type">產業應用</span>
+            <span class="question-text">以你目前推動 AI 工具導入的角色為例，你的推廣小組更接近「真正的團隊」還是「工作小組」？依據五要素逐項評估。</span>
+            <span class="accordion-icon"></span>
+        </summary>
+        <div class="question-answer">
+            <p>這是需要你自我評估的題目，以下提供評估框架：</p>
+            <ul>
+                <li><strong>小規模</strong>：人數是否在合理範圍？還是跨部門委員會式的大組？</li>
+                <li><strong>互補技能</strong>：是否同時有 AI 技術理解者、業務流程熟悉者、變革管理者？</li>
+                <li><strong>共同目的</strong>：成員是否都能說出「我們為何存在」，且答案一致？</li>
+                <li><strong>具體績效目標</strong>：是否有可衡量的里程碑（例如 Q3 前完成 X 個部門工具部署）？</li>
+                <li><strong>共同當責</strong>：當某個部門導入失敗，是整個小組感到有責任，還是只有負責那個部門的人？</li>
+            </ul>
+            <p>如果多數是「否」，那你的小組是工作小組——這不是問題，但要意識到它的限制，不要期待工作小組能產出需要真正團隊才能完成的成果。</p>
+        </div>
+    </details>
+
+    <details class="question-accordion">
+        <summary class="question-header">
+            <span class="question-number">Q3</span>
+            <span class="question-type">批判思考</span>
+            <span class="question-text">文章認為「共同當責無法被強制要求」，但組織現實中管理者往往必須靠制度來建立當責機制。這兩者矛盾嗎？如何調和？</span>
+            <span class="accordion-icon"></span>
+        </summary>
+        <div class="question-answer">
+            <p>不矛盾，但需要分層理解。文章說的是「共同當責（mutual accountability）」——成員對彼此承諾、相互督促的心理狀態。這種心理契約確實無法靠制度直接製造，它需要共同目的和目標作為土壤，在自然互動中生長。</p>
+            <p>管理制度能做的，是創造讓當責生長的條件，例如：設定清晰的集體績效目標（讓成員看到彼此行動如何影響共同結果）、確保足夠的共同工作時間、移除讓個人英雄主義優先的激勵結構。</p>
+            <p>調和方式：用制度設計「讓當責有利可圖」，而不是用制度「強制要求當責行為」。前者有效，後者製造反彈。</p>
+        </div>
+    </details>
+</div>
+
+<!-- Bottom Line -->
+<div class="bottom-line">
+    <h2>我的行動結論 Bottom Line for Me</h2>
+    <div class="bottom-line-grid">
+        <div class="bl-item">
+            <div class="bl-label">✔ 核心洞察</div>
+            <p>推動 AI 導入的最大風險不是技術選型，而是錯誤地用「團隊」名義運作一個工作小組——缺乏具體目標、缺乏共同當責，導致「導入建議」永遠停在建議階段。</p>
+        </div>
+        <div class="bl-item">
+            <div class="bl-label">📈 立即應用</div>
+            <p>本週對 AI 推廣小組做一次五要素自評。重點診斷：是否有可衡量的 Q2 里程碑？業務單位是從一開始參與，還是最後才收到報告？</p>
+        </div>
+        <div class="bl-item">
+            <div class="bl-label">⚠ 需要補充</div>
+            <p>文章缺少「遠端/跨文化團隊」與台灣層級文化對共同當責的影響討論。建議搭配 Amy Edmondson 的心理安全感研究一起閱讀。</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>原文來源：<a href="https://hbr.org/2005/07/the-discipline-of-teams" target="_blank">HBR — The Discipline of Teams (2005)</a></p>
+    <p>Jon R. Katzenbach &amp; Douglas K. Smith｜導讀製作：2026-03-05</p>
+    <br>
+    <p>建議 Chat Title：</p>
+    <div class="chat-title-box">2026-03-05 [Framework] Katzenbach - Discipline of Teams</div>
+</div>
+
+</div>
+</body>
+</html>
