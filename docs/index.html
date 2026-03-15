@@ -96,6 +96,7 @@
         .pill-tag-Analysis.active   { background: #7c3aed; border-color: #7c3aed; }
         .pill-tag-Framework.active  { background: #d97706; border-color: #d97706; }
         .pill-tag-Research.active   { background: #059669; border-color: #059669; }
+        .pill-tag-Leadership.active { background: #b45309; border-color: #b45309; }
         .pill-tag-Automation.active { background: #ea580c; border-color: #ea580c; }
         .pill-tag-Prompt.active     { background: #4338ca; border-color: #4338ca; }
         .pill-tag-Security.active   { background: #dc2626; border-color: #dc2626; }
@@ -199,6 +200,7 @@
         .tag-analysis   { background: #ddd6fe; color: #4c1d95; }
         .tag-framework  { background: #fde68a; color: #92400e; }
         .tag-research   { background: #a7f3d0; color: #065f46; }
+        .tag-leadership { background: #fed7aa; color: #7c2d12; }
         .tag-automation { background: #fed7aa; color: #7c2d12; }
         .tag-prompt     { background: #e0e7ff; color: #3730a3; }
         .tag-security   { background: #fca5a5; color: #7f1d1d; }
@@ -224,7 +226,7 @@
 <body>
     <div class="header">
         <h1>HBR Learning Library</h1>
-        <p>Harvard Business Review 導讀文件庫 — AI Expert Learning System v1.6</p>
+        <p>Harvard Business Review 導讀文件庫 — AI Expert Learning System v1.7</p>
     </div>
 
     <div class="filter-bar">
@@ -244,13 +246,40 @@
     <div class="container" id="container"></div>
 
     <div class="footer">
-        <p>Powered by AI Expert Learning System v1.6 | Processed via Claude Code</p>
+        <p>Powered by AI Expert Learning System v1.7 | Processed via Claude Code</p>
     </div>
 
     <script>
         // ── Article Data ─────────────────── AUTO-GENERATED START ───────
         // Do not edit this block manually — run: python3 build_index.py
         const articles = [
+            {
+                file: "2026-03-05_discipline-of-teams.html",
+                title: "團隊的紀律 - Katzenbach & Smith HBR",
+                source: "Jon R. Katzenbach & Douglas K. Smith / HBR 2005",
+                date: "2026-03-05",
+                tags: ["Framework", "Analysis", "Leadership"],
+                rating: "3.6",
+                summary: "真正的團隊 vs. 工作小組：五要素框架、三類型團隊、互信與當責的建立。"
+            },
+            {
+                file: "2026-03-05_hbs-ai-labor-market.html",
+                title: "AI 勞動市場衝擊 - HBS 研究導讀",
+                source: "Suraj Srinivasan / Harvard Business School Working Knowledge",
+                date: "2026-03-05",
+                tags: ["Research", "LLM", "Analysis", "Framework"],
+                rating: "3.35",
+                summary: "HBS 研究：ChatGPT 後自動化職缺降13%，擴增職缺升20%，企業再培訓策略建議。"
+            },
+            {
+                file: "2026-03-05_ibarra-career-transition.html",
+                title: "職涯轉變三階段 - Ibarra HBR",
+                source: "Herminia Ibarra / Harvard Business Review",
+                date: "2026-03-05",
+                tags: ["Framework", "Analysis", "Research"],
+                rating: "2.8",
+                summary: "Ibarra 職涯轉換三階段框架：分離、過渡期、再整合。可類比 AI 組織轉型變革管理。"
+            },
             {
                 file: "2026-02-27_ai-coordination-not-automation.html",
                 title: "AI 最大回報是協調而非自動化 - Choudary Translation Costs",
@@ -320,9 +349,9 @@
         const tagClasses = {
             "Agent": "tag-agent", "LLM": "tag-llm", "Tool": "tag-tool",
             "Analysis": "tag-analysis", "Framework": "tag-framework",
-            "Research": "tag-research", "Automation": "tag-automation",
-            "Prompt": "tag-prompt", "Security": "tag-security",
-            "Content": "tag-content", "API": "tag-api"
+            "Research": "tag-research", "Leadership": "tag-leadership",
+            "Automation": "tag-automation", "Prompt": "tag-prompt",
+            "Security": "tag-security", "Content": "tag-content", "API": "tag-api"
         };
 
         // ── Month Names ──────────────────────────────────────────────────
