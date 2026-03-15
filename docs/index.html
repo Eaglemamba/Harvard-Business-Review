@@ -90,12 +90,17 @@
         }
 
         /* Tag pill colors when active */
-        .pill-tag-Agent.active  { background: #4f46e5; border-color: #4f46e5; }
-        .pill-tag-LLM.active    { background: #2563eb; border-color: #2563eb; }
-        .pill-tag-Tool.active   { background: #e11d48; border-color: #e11d48; }
-        .pill-tag-Analysis.active { background: #7c3aed; border-color: #7c3aed; }
-        .pill-tag-Framework.active { background: #d97706; border-color: #d97706; }
-        .pill-tag-Research.active  { background: #059669; border-color: #059669; }
+        .pill-tag-Agent.active      { background: #4f46e5; border-color: #4f46e5; }
+        .pill-tag-LLM.active        { background: #2563eb; border-color: #2563eb; }
+        .pill-tag-Tool.active       { background: #e11d48; border-color: #e11d48; }
+        .pill-tag-Analysis.active   { background: #7c3aed; border-color: #7c3aed; }
+        .pill-tag-Framework.active  { background: #d97706; border-color: #d97706; }
+        .pill-tag-Research.active   { background: #059669; border-color: #059669; }
+        .pill-tag-Automation.active { background: #ea580c; border-color: #ea580c; }
+        .pill-tag-Prompt.active     { background: #4338ca; border-color: #4338ca; }
+        .pill-tag-Security.active   { background: #dc2626; border-color: #dc2626; }
+        .pill-tag-Content.active    { background: #65a30d; border-color: #65a30d; }
+        .pill-tag-API.active        { background: #7c3aed; border-color: #7c3aed; }
 
         .stats-line {
             font-size: 0.8rem;
@@ -188,12 +193,17 @@
             font-size: 0.65rem;
             font-weight: 600;
         }
-        .tag-agent { background: #c7d2fe; color: #3730a3; }
-        .tag-llm { background: #bfdbfe; color: #1e3a8a; }
-        .tag-tool { background: #fecdd3; color: #9f1239; }
-        .tag-analysis { background: #ddd6fe; color: #4c1d95; }
-        .tag-framework { background: #fde68a; color: #92400e; }
-        .tag-research { background: #a7f3d0; color: #065f46; }
+        .tag-agent      { background: #c7d2fe; color: #3730a3; }
+        .tag-llm        { background: #bfdbfe; color: #1e3a8a; }
+        .tag-tool       { background: #fecdd3; color: #9f1239; }
+        .tag-analysis   { background: #ddd6fe; color: #4c1d95; }
+        .tag-framework  { background: #fde68a; color: #92400e; }
+        .tag-research   { background: #a7f3d0; color: #065f46; }
+        .tag-automation { background: #fed7aa; color: #7c2d12; }
+        .tag-prompt     { background: #e0e7ff; color: #3730a3; }
+        .tag-security   { background: #fca5a5; color: #7f1d1d; }
+        .tag-content    { background: #d9f99d; color: #3f6212; }
+        .tag-api        { background: #c4b5fd; color: #5b21b6; }
         .rating { font-weight: 600; color: #f59e0b; }
 
         .no-results {
@@ -238,44 +248,35 @@
     </div>
 
     <script>
-        // ── Article Data ─────────────────────────────────────────────────
-        // This list is auto-updated by the batch processor
+        // ── Article Data ─────────────────── AUTO-GENERATED START ───────
+        // Do not edit this block manually — run: python3 build_index.py
         const articles = [
+            {
+                file: "2026-02-27_ai-coordination-not-automation.html",
+                title: "AI 最大回報是協調而非自動化 - Choudary Translation Costs",
+                source: "Sangeet Paul Choudary / Harvard Business Review",
+                date: "2026-02-27",
+                tags: ["Framework", "Analysis", "Automation", "Integration"],
+                rating: "4.4",
+                summary: "AI 降低翻譯成本實現無共識協調，改變碎片化產業的價值創造與競爭格局。"
+            },
+            {
+                file: "2026-02-27_building-trust-team.html",
+                title: "團隊信任建構指南 - HBR Management Tips Collection",
+                source: "Harvard Business Review Editorial Staff",
+                date: "2026-02-27",
+                tags: ["Framework", "Analysis", "Tool"],
+                rating: "4.0",
+                summary: "HBR 精選十則管理心法，從心理安全感到 AI 導入，系統性建構團隊信任。"
+            },
             {
                 file: "2026-02-24_ai-upending-marketing.html",
                 title: "AI 正在兩條戰線顛覆行銷 - Puntoni Marketing Revolution",
                 source: "Stefano Puntoni / Harvard Business Review",
                 date: "2026-02-24",
-                tags: ["Agent", "LLM", "Tool", "Analysis"],
+                tags: ["Agent", "Tool", "LLM", "Analysis"],
                 rating: "4.1",
                 summary: "對話式 AI 顛覆搜尋行銷，AI Agent 成為新型機器客戶，從 SEO 到 GEO 的策略轉型。"
-            },
-            {
-                file: "2026-02-24_genai-wall-effect-experts.html",
-                title: "Gen AI 無法讓員工變專家 - AI Wall Effect 研究",
-                source: "HBR Magazine Mar-Apr 2026 / Stanford & Harvard Research",
-                date: "2026-02-24",
-                tags: ["LLM", "Analysis", "Framework"],
-                rating: "3.9",
-                summary: "Gen AI 能縮短新手學習曲線，但無法消除專家與非專家的績效差距。AI Wall Effect 限制了跨領域能力轉移。"
-            },
-            {
-                file: "2026-02-24_crypto-market-maturation.html",
-                title: "加密貨幣正在成熟嗎？- 市場效率與自律監管研究",
-                source: "Mariia Petryk / Harvard Business Review",
-                date: "2026-02-24",
-                tags: ["Analysis", "Framework", "Research"],
-                rating: "2.5",
-                summary: "研究顯示加密貨幣市場正在成熟，自律監管的 IEO 市場效率接近 IPO，ICO 與 IPO 的效率差距縮小三分之一。"
-            },
-            {
-                file: "2026-02-24_context-competitive-advantage.html",
-                title: "當所有公司都能用相同 AI 模型，情境成為競爭優勢",
-                source: "Rohan Narayana Murty & Ravi Kumar S / Harvard Business Review",
-                date: "2026-02-24",
-                tags: ["Agent", "LLM", "Framework", "Analysis"],
-                rating: "4.3",
-                summary: "當所有企業使用相同 AI 模型和工具，組織情境（Context）成為真正的差異化來源。作者提出 Context Engineering 四步架構，將隱性執行模式轉化為 AI 可操作的競爭優勢。"
             },
             {
                 file: "2026-02-24_companies-grow-rapidly-stall.html",
@@ -287,29 +288,41 @@
                 summary: "全球 500+ 高階營收驅動者調查顯示，跨部門對齊是快速成長的關鍵。領導層整合、集權化趨勢與 CoE 建設成為成長引擎。"
             },
             {
-                file: "2026-02-27_building-trust-team.html",
-                title: "團隊信任建設 10 大管理心法 - HBR Management Tips",
-                source: "Harvard Business Review Editorial Staff",
-                date: "2026-02-27",
-                tags: ["Framework", "Analysis", "Tool"],
-                rating: "4.0",
-                summary: "涵蓋心理安全感、信任量化、AI 導入信任、價值觀領導等 10 個管理技巧，打造高績效信任團隊。"
+                file: "2026-02-24_context-competitive-advantage.html",
+                title: "當所有公司都能用相同 AI 模型，情境成為競爭優勢",
+                source: "Rohan Narayana Murty & Ravi Kumar S / Harvard Business Review",
+                date: "2026-02-24",
+                tags: ["Agent", "LLM", "Framework", "Analysis"],
+                rating: "4.3",
+                summary: "當所有企業使用相同 AI 模型和工具，組織情境（Context）成為真正的差異化來源。作者提出 Context Engineering 四步架構，將隱性執行模式轉化為 AI 可操作的競爭優勢。"
             },
             {
-                file: "2026-02-27_ai-coordination-not-automation.html",
-                title: "AI 最大價值是協調，不是自動化 - Translation Cost 框架",
-                source: "Sangeet Paul Choudary / Harvard Business Review",
-                date: "2026-02-27",
-                tags: ["Framework", "Analysis", "Automation"],
-                rating: "4.4",
-                summary: "AI 降低翻譯成本實現「無共識協調」，改變碎片化產業的價值創造與競爭格局。三大既有者策略框架。"
+                file: "2026-02-24_crypto-market-maturation.html",
+                title: "加密貨幣正在成熟嗎？- 市場效率與自律監管研究",
+                source: "Mariia Petryk / Harvard Business Review",
+                date: "2026-02-24",
+                tags: ["Analysis", "Framework", "Research"],
+                rating: "2.5",
+                summary: "研究顯示加密貨幣市場正在成熟，自律監管的 IEO 市場效率接近 IPO，ICO 與 IPO 的效率差距縮小三分之一。"
+            },
+            {
+                file: "2026-02-24_genai-wall-effect-experts.html",
+                title: "Gen AI 無法讓員工變專家 - AI Wall Effect 研究",
+                source: "HBR Magazine Mar-Apr 2026 / Stanford & Harvard Research",
+                date: "2026-02-24",
+                tags: ["LLM", "Analysis", "Framework"],
+                rating: "3.9",
+                summary: "Gen AI 能縮短新手學習曲線，但無法消除專家與非專家的績效差距。AI Wall Effect 限制了跨領域能力轉移。"
             }
         ];
+        // ── AUTO-GENERATED END ───────────────────────────────────────────
 
         const tagClasses = {
             "Agent": "tag-agent", "LLM": "tag-llm", "Tool": "tag-tool",
             "Analysis": "tag-analysis", "Framework": "tag-framework",
-            "Research": "tag-research"
+            "Research": "tag-research", "Automation": "tag-automation",
+            "Prompt": "tag-prompt", "Security": "tag-security",
+            "Content": "tag-content", "API": "tag-api"
         };
 
         // ── Month Names ──────────────────────────────────────────────────
